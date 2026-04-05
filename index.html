@@ -2,10 +2,10 @@
 <html class="scroll-smooth" lang="es">
 <head>
 <meta charset="utf-8"/>
-<link rel="icon" type="image/x-icon" href="/favicon.ico"/>
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+<link rel="icon" type="image/x-icon" href="/assets/favicon.ico"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 
 <!-- SEO primario -->
@@ -136,110 +136,26 @@
 
 <style>
   body { cursor: none; background-color: #fef9f0; }
-
-  .custom-cursor {
-    width: 8px; height: 8px;
-    background: #031b3e;
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-    transition: transform 0.2s ease, width 0.3s ease, height 0.3s ease;
-  }
-  .cursor-hover {
-    width: 40px; height: 40px;
-    background: transparent;
-    border: 1px solid #031b3e;
-    transform: translate(-50%, -50%);
-  }
+  .custom-cursor { width: 8px; height: 8px; background: #031b3e; border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transition: transform 0.2s ease, width 0.3s ease, height 0.3s ease; }
+  .cursor-hover { width: 40px; height: 40px; background: transparent; border: 1px solid #031b3e; transform: translate(-50%, -50%); }
   .marquee { white-space: nowrap; overflow: hidden; display: flex; }
   .marquee-content { display: flex; animation: scroll 30s linear infinite; }
-  @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-  .fade-up {
-    opacity: 0; transform: translateY(20px);
-    transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
-  }
+  @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+  .fade-up { opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1); }
   .fade-up.visible { opacity: 1; transform: translateY(0); }
-
-  /* Menú mobile */
-  #mobile-menu {
-    display: none;
-    flex-direction: column;
-    gap: 24px;
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: #031b3e;
-    z-index: 200;
-    align-items: center;
-    justify-content: center;
-  }
+  #mobile-menu { display: none; flex-direction: column; gap: 24px; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #031b3e; z-index: 200; align-items: center; justify-content: center; }
   #mobile-menu.open { display: flex; }
-  #mobile-menu a {
-    color: #fef9f0;
-    font-size: 1.5rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-family: 'Space Grotesk', monospace;
-  }
-  #mobile-menu-close {
-    position: absolute;
-    top: 24px; right: 24px;
-    color: #fef9f0;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 2rem;
-    line-height: 1;
-  }
-
-  /* WhatsApp flotante */
-  .wa-float {
-    position: fixed;
-    bottom: 28px; right: 28px;
-    z-index: 1000;
-    background: #25D366;
-    border-radius: 50%;
-    width: 60px; height: 60px;
-    display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    text-decoration: none;
-  }
-  .wa-float:hover {
-    transform: scale(1.08);
-    box-shadow: 0 6px 28px rgba(37,211,102,0.5);
-  }
+  #mobile-menu a { color: #fef9f0; font-size: 1.5rem; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; font-family: 'Space Grotesk', monospace; }
+  #mobile-menu-close { position: absolute; top: 24px; right: 24px; color: #fef9f0; background: none; border: none; cursor: pointer; font-size: 2rem; line-height: 1; }
+  .wa-float { position: fixed; bottom: 28px; right: 28px; z-index: 1000; background: #25D366; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.4); transition: transform 0.2s ease, box-shadow 0.2s ease; text-decoration: none; }
+  .wa-float:hover { transform: scale(1.08); box-shadow: 0 6px 28px rgba(37,211,102,0.5); }
   .wa-float svg { width: 32px; height: 32px; fill: white; }
-
-  /* Tooltip WhatsApp */
-  .wa-float::before {
-    content: "Escribime";
-    position: absolute;
-    right: 70px;
-    background: #031b3e;
-    color: #fef9f0;
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 6px 12px;
-    white-space: nowrap;
-    opacity: 0;
-    transition: opacity 0.2s;
-    font-family: 'Space Grotesk', monospace;
-  }
+  .wa-float::before { content: "Escribime"; position: absolute; right: 70px; background: #031b3e; color: #fef9f0; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; padding: 6px 12px; white-space: nowrap; opacity: 0; transition: opacity 0.2s; font-family: 'Space Grotesk', monospace; }
   .wa-float:hover::before { opacity: 1; }
-
-  @media (max-width: 768px) {
-    body { cursor: auto; }
-    .custom-cursor { display: none; }
-  }
+  @media (max-width: 768px) { body { cursor: auto; } .custom-cursor { display: none; } }
 </style>
 </head>
-
+git add .
 <body class="font-body text-primary antialiased overflow-x-hidden">
 
 <!-- Cursor -->
