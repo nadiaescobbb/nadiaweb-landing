@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>nadiaweb_ | Landing Pages en 7 Días</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,700&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#44474e",
+                    "inverse-primary": "#b3c6f3",
+                    "on-secondary-fixed-variant": "#36485b",
+                    "on-tertiary-fixed": "#271900",
+                    "on-primary-fixed-variant": "#33476c",
+                    "tertiary": "#271900",
+                    "primary-container": "#1c3054",
+                    "inverse-on-surface": "#f5f0e7",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-container": "#ae956c",
+                    "on-secondary-fixed": "#091d2e",
+                    "tertiary-fixed-dim": "#dec397",
+                    "on-primary-fixed": "#031b3e",
+                    "surface-bright": "#fef9f0",
+                    "on-error": "#ffffff",
+                    "surface-tint": "#4b5e85",
+                    "primary": "#031b3e",
+                    "on-background": "#1d1c16",
+                    "surface": "#fef9f0",
+                    "secondary": "#4e6073",
+                    "surface-dim": "#ded9d1",
+                    "tertiary-container": "#3e2e0e",
+                    "on-surface": "#1d1c16",
+                    "inverse-surface": "#32302a",
+                    "surface-container": "#f2ede4",
+                    "primary-fixed": "#d8e2ff",
+                    "on-secondary": "#ffffff",
+                    "on-primary-container": "#8598c2",
+                    "outline": "#75777f",
+                    "surface-container-low": "#f8f3ea",
+                    "on-tertiary-fixed-variant": "#574422",
+                    "on-error-container": "#93000a",
+                    "surface-container-highest": "#e7e2d9",
+                    "surface-variant": "#e7e2d9",
+                    "secondary-fixed-dim": "#b5c8df",
+                    "primary-fixed-dim": "#b3c6f3",
+                    "on-secondary-container": "#526478",
+                    "background": "#fef9f0",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed": "#d1e4fb",
+                    "secondary-container": "#cfe2f9",
+                    "tertiary-fixed": "#fcdfb1",
+                    "outline-variant": "#c5c6cf",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-high": "#ede8df",
+                    "error": "#ba1a1a",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0rem",
+                    "lg": "0rem",
+                    "xl": "0rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Newsreader", "serif"],
+                    "body": ["Space Grotesk", "monospace"],
+                    "label": ["Space Grotesk", "monospace"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            cursor: none;
+            background-color: #fef9f0;
+        }
+        .custom-cursor {
+            width: 8px;
+            height: 8px;
+            background: #031b3e;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.2s ease, width 0.3s ease, height 0.3s ease;
+        }
+        .cursor-hover {
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            border: 1px solid #031b3e;
+            transform: translate(-50%, -50%);
+        }
+        .marquee {
+            white-space: nowrap;
+            overflow: hidden;
+            display: flex;
+        }
+        .marquee-content {
+            display: flex;
+            animation: scroll 30s linear infinite;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="font-body text-primary antialiased overflow-x-hidden">
+<!-- Custom Cursor Overlay -->
+<div class="custom-cursor fixed top-0 left-0 -translate-x-1/2 -translate-y-1/2 hidden md:block" id="cursor"></div>
+
+<!-- Navigation -->
+<header class="fixed top-0 w-full flex justify-between items-center px-8 py-6 max-w-full bg-[#fef9f0]/80 backdrop-blur-xl z-50">
+<div class="text-2xl font-bold italic font-headline text-[#031b3e]">nw</div>
+<nav class="hidden md:flex space-x-10">
+<a class="text-[0.75rem] uppercase tracking-[0.1em] font-label text-[#031b3e] hover:text-[#271900] transition-colors duration-300" href="#servicios">servicios</a>
+<a class="text-[0.75rem] uppercase tracking-[0.1em] font-label text-[#031b3e] hover:text-[#271900] transition-colors duration-300" href="#proceso">cómo funciona</a>
+<a class="text-[0.75rem] uppercase tracking-[0.1em] font-label text-[#031b3e] hover:text-[#271900] transition-colors duration-300" href="#contacto">contacto</a>
+</nav>
+<div class="md:hidden">
+<span class="material-symbols-outlined text-primary">menu</span>
+</div>
+</header>
+
+<!-- Hero Section -->
+<section class="min-h-screen flex flex-col md:flex-row pt-24">
+<div class="w-full md:w-3/5 bg-surface flex flex-col justify-center px-8 md:px-24 py-12 md:py-0">
+<span class="font-label text-[0.75rem] uppercase tracking-[0.2em] mb-6 block text-tertiary">Freelance Developer · Argentina</span>
+<h1 class="font-headline text-[4rem] md:text-[6rem] leading-[0.9] font-bold italic mb-8">
+    tu web,<br/>en 7 días.
+</h1>
+<p class="font-body text-lg md:text-xl mb-12 max-w-md opacity-80">
+    Páginas web simples y efectivas para negocios argentinos que quieren más consultas por WhatsApp.
+</p>
+<div>
+<a class="inline-block px-12 py-5 bg-primary text-white font-label text-[0.875rem] uppercase tracking-widest hover:bg-tertiary transition-all duration-500" href="https://wa.me/5493625142700" target="_blank">
+    Consultar por WhatsApp →
+</a>
+</div>
+</div>
+<div class="w-full md:w-2/5 bg-primary relative flex flex-col justify-end p-8 md:p-16 overflow-hidden">
+<div class="relative z-10 space-y-12">
+<div class="border-t border-white/20 pt-8">
+<div class="font-headline italic text-6xl text-surface-bright">7 días</div>
+<div class="font-label text-xs uppercase tracking-widest text-surface-bright/60 mt-2">Plazo de entrega</div>
+</div>
+<div class="border-t border-white/20 pt-8">
+<div class="font-headline italic text-6xl text-surface-bright">3 planes</div>
+<div class="font-label text-xs uppercase tracking-widest text-surface-bright/60 mt-2">Adaptados a tu negocio</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Marquee -->
+<div class="bg-primary text-surface-bright py-6 border-y border-white/10 overflow-hidden select-none">
+<div class="marquee">
+<div class="marquee-content flex items-center gap-12 text-[0.75rem] uppercase tracking-[0.3em] font-label">
+<span>landing pages · diseño web · más clientes por WhatsApp · toda Argentina</span>
+<span>landing pages · diseño web · más clientes por WhatsApp · toda Argentina</span>
+<span>landing pages · diseño web · más clientes por WhatsApp · toda Argentina</span>
+<span>landing pages · diseño web · más clientes por WhatsApp · toda Argentina</span>
+</div>
+</div>
+</div>
+
+<!-- Services -->
+<section class="py-32 px-8 md:px-24 bg-surface-container-low" id="servicios">
+<div class="mb-20 text-center md:text-left">
+<span class="font-label text-[0.75rem] uppercase tracking-[0.2em] text-tertiary">Planes</span>
+<h2 class="font-headline text-5xl italic font-bold mt-4">Lo que ofrezco</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-0">
+
+<!-- Card 1 -->
+<div class="group bg-surface-container p-12 border border-outline-variant/10 hover:bg-primary transition-all duration-700">
+<div class="font-label text-[0.75rem] uppercase tracking-widest text-tertiary group-hover:text-surface-bright/60 mb-4">Plan 01 · 3 días hábiles</div>
+<h3 class="font-headline text-4xl italic mb-2 group-hover:text-white transition-colors">Básico</h3>
+<p class="font-body text-xs opacity-50 group-hover:opacity-60 group-hover:text-surface-bright mb-8">tu presencia online</p>
+<div class="font-label text-2xl mb-8 group-hover:text-surface-bright transition-colors">$40.000 ARS</div>
+<ul class="font-body text-sm space-y-4 opacity-70 group-hover:opacity-100 group-hover:text-surface-bright/80 transition-all">
+<li>— Página de links personalizada</li>
+<li>— Diseño con tus colores y logo</li>
+<li>— Links a WhatsApp e Instagram</li>
+<li>— Adaptada a celular</li>
+<li>— Queda online con link listo</li>
+</ul>
+</div>
+
+<!-- Card 2 -->
+<div class="group bg-surface-container-high p-12 border border-outline-variant/10 hover:bg-primary transition-all duration-700">
+<div class="font-label text-[0.75rem] uppercase tracking-widest text-tertiary group-hover:text-surface-bright/60 mb-4">Plan 02 · más elegido · 7 días</div>
+<h3 class="font-headline text-4xl italic mb-2 group-hover:text-white transition-colors">Estándar</h3>
+<p class="font-body text-xs opacity-50 group-hover:opacity-60 group-hover:text-surface-bright mb-8">tu web en 7 días</p>
+<div class="font-label text-2xl mb-8 group-hover:text-surface-bright transition-colors">$65.000 ARS</div>
+<ul class="font-body text-sm space-y-4 opacity-70 group-hover:opacity-100 group-hover:text-surface-bright/80 transition-all">
+<li>— Landing page completa (1 página)</li>
+<li>— Secciones: inicio, servicios, contacto</li>
+<li>— Botón de WhatsApp directo</li>
+<li>— Adaptada a celular y computadora</li>
+<li>— Queda online en Vercel</li>
+<li>— 1 ronda de correcciones</li>
+</ul>
+</div>
+
+<!-- Card 3 -->
+<div class="group bg-surface-container-highest p-12 border border-outline-variant/10 hover:bg-primary transition-all duration-700">
+<div class="font-label text-[0.75rem] uppercase tracking-widest text-tertiary group-hover:text-surface-bright/60 mb-4">Plan 03 · 10 días hábiles</div>
+<h3 class="font-headline text-4xl italic mb-2 group-hover:text-white transition-colors">Completo</h3>
+<p class="font-body text-xs opacity-50 group-hover:opacity-60 group-hover:text-surface-bright mb-8">web + presencia total</p>
+<div class="font-label text-2xl mb-8 group-hover:text-surface-bright transition-colors">$90.000 ARS</div>
+<ul class="font-body text-sm space-y-4 opacity-70 group-hover:opacity-100 group-hover:text-surface-bright/80 transition-all">
+<li>— Todo lo del plan Estándar</li>
+<li>— Página de links incluida</li>
+<li>— Configuración de dominio propio</li>
+<li>— 2 rondas de correcciones</li>
+<li>— Atención personalizada</li>
+</ul>
+</div>
+
+</div>
+</section>
+
+<!-- How it Works -->
+<section class="bg-primary py-32 px-8 md:px-24 text-surface-bright" id="proceso">
+<div class="mb-24 flex flex-col md:flex-row md:items-end justify-between">
+<div>
+<span class="font-label text-[0.75rem] uppercase tracking-[0.2em] opacity-60">El proceso</span>
+<h2 class="font-headline text-6xl italic font-bold mt-4">Cómo trabajamos</h2>
+</div>
+<div class="mt-8 md:mt-0 max-w-sm opacity-60 font-body text-sm">
+    Un proceso simple y sin vueltas. Tu negocio online en tiempo récord.
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="relative group">
+<span class="font-headline text-8xl italic opacity-10 absolute -top-12 -left-4">01</span>
+<div class="relative pt-8 border-t border-white/20">
+<h4 class="font-label uppercase tracking-widest text-sm mb-4">Me escribís</h4>
+<p class="font-body text-xs opacity-60 leading-relaxed">Por WhatsApp o Instagram. Me contás de tu negocio y elegimos el plan.</p>
+</div>
+</div>
+<div class="relative group">
+<span class="font-headline text-8xl italic opacity-10 absolute -top-12 -left-4">02</span>
+<div class="relative pt-8 border-t border-white/20">
+<h4 class="font-label uppercase tracking-widest text-sm mb-4">El presupuesto</h4>
+<p class="font-body text-xs opacity-60 leading-relaxed">Sin sorpresas. Precio fijo, todo incluido. Confirmás y arrancamos.</p>
+</div>
+</div>
+<div class="relative group">
+<span class="font-headline text-8xl italic opacity-10 absolute -top-12 -left-4">03</span>
+<div class="relative pt-8 border-t border-white/20">
+<h4 class="font-label uppercase tracking-widest text-sm mb-4">Desarrollo</h4>
+<p class="font-body text-xs opacity-60 leading-relaxed">Trabajo en tu web y te muestro el avance. Podés pedir cambios en el camino.</p>
+</div>
+</div>
+<div class="relative group">
+<span class="font-headline text-8xl italic opacity-10 absolute -top-12 -left-4">04</span>
+<div class="relative pt-8 border-t border-white/20">
+<h4 class="font-label uppercase tracking-widest text-sm mb-4">Tu web online</h4>
+<p class="font-body text-xs opacity-60 leading-relaxed">Te entrego el link funcionando. Desde ese momento empezás a recibir consultas.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- For Who -->
+<section class="py-32 px-8 md:px-24 bg-surface grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="font-headline text-5xl italic font-bold mb-12">¿Para quién<br/>es esto?</h2>
+<ul class="space-y-8">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-tertiary">check_circle</span>
+<div>
+<h4 class="font-label uppercase text-[0.8rem] tracking-widest mb-1">Negocios locales</h4>
+<p class="font-body text-sm opacity-60">Peluquerías, estéticas, veterinarias, gimnasios, consultorios.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-tertiary">check_circle</span>
+<div>
+<h4 class="font-label uppercase text-[0.8rem] tracking-widest mb-1">Emprendedoras con Instagram</h4>
+<p class="font-body text-sm opacity-60">Si vendés por redes y querés algo más profesional que Linktree.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-tertiary">check_circle</span>
+<div>
+<h4 class="font-label uppercase text-[0.8rem] tracking-widest mb-1">Profesionales independientes</h4>
+<p class="font-body text-sm opacity-60">Contadores, psicólogos, arquitectas — cualquiera que quiera más clientes.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="bg-primary aspect-square flex flex-col justify-center items-center text-center p-12 text-surface-bright relative overflow-hidden">
+<div class="relative z-10">
+<div class="font-headline text-4xl italic mb-4">100% remoto</div>
+<div class="font-label text-[0.75rem] uppercase tracking-[0.3em]">toda Argentina</div>
+<div class="mt-8 border-t border-white/20 pt-8">
+<p class="font-body text-xs opacity-60">Trabajo desde Resistencia, Chaco para todo el país.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CTA Section -->
+<section class="bg-primary py-32 px-8 md:px-24 text-center" id="contacto">
+<div class="max-w-4xl mx-auto">
+<h2 class="font-headline text-5xl md:text-7xl italic font-bold text-surface-bright mb-12">
+    ¿tu negocio no tiene web?
+</h2>
+<p class="font-body text-surface-bright/60 mb-16 text-lg max-w-xl mx-auto">
+    No pierdas más clientes por no tener presencia online. Escribime y en 24hs te tengo el presupuesto.
+</p>
+<a class="inline-block px-16 py-6 bg-surface-bright text-primary font-label text-[0.875rem] uppercase tracking-widest hover:bg-tertiary-fixed transition-all duration-500" href="https://wa.me/5493625142700" target="_blank">
+    Hablemos por WhatsApp →
+</a>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-surface-dim px-12 py-16 w-full flex flex-col md:flex-row justify-between items-start md:items-center">
+<div>
+<div class="text-3xl font-bold italic font-headline text-[#031b3e]">nw</div>
+<p class="font-label text-[0.75rem] mt-4 opacity-50 uppercase tracking-widest">© nadiaweb_ 2025</p>
+</div>
+<div class="mt-12 md:mt-0 flex flex-col md:items-end space-y-4">
+<a class="font-body text-[0.875rem] tracking-wide text-primary opacity-80 hover:opacity-100 transition-opacity" href="https://instagram.com/nadiaweb_" target="_blank">Instagram @nadiaweb_</a>
+<p class="font-body text-[0.875rem] tracking-wide text-primary opacity-80">Argentina</p>
+</div>
+</footer>
+
+<script>
+    const cursor = document.getElementById('cursor');
+    const links = document.querySelectorAll('a, button, .group');
+
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+
+    links.forEach(link => {
+        link.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
+        link.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('section, .group').forEach(el => {
+        el.classList.add('fade-up');
+        observer.observe(el);
+    });
+</script>
+</body></html>
