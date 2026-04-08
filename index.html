@@ -9,6 +9,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400;1,700&family=Poppins:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
+/* ── CUSTOM SCROLLBAR ── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #fef9f0; }
+::-webkit-scrollbar-thumb { background: #031b3e; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #B83232; }
+* { scrollbar-width: thin; scrollbar-color: #031b3e #fef9f0; }
+
 /* ── RESET & TOKENS ── */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -828,7 +835,7 @@ footer {
   display: block;
   width: 24px;
   height: 2px;
-  background: var(--beige);
+  background: var(--azul);
   border-radius: 2px;
   transition: all 0.3s ease;
 }
@@ -908,57 +915,22 @@ footer {
 <section id="hero">
   <div class="hero-wrap">
     <div>
-      <p class="hero-eyebrow reveal">nadiaweb_ · diseño y desarrollo</p>
-      <div class="reveal d1" style="display:inline-block; font-family:var(--mono); font-size:0.6rem; letter-spacing:0.1em; color:rgba(254,249,240,0.6); background:rgba(255,255,255,0.06); padding:6px 14px; border-radius:100px; margin-bottom:24px; border:1px solid rgba(255,255,255,0.1);">
-        ✓ Proceso de 7 días · Si no entrego en plazo, te devuelvo la seña
-      </div>
+      <p class="hero-eyebrow reveal">nadiaweb_ &middot; diseño y desarrollo</p>
       <h1 class="hero-h1 reveal d1">
         Tu negocio existe.<br>
         <em>Que online también<br>se entienda.</em>
       </h1>
       <p class="hero-sub reveal d2">
-        Hago páginas web para emprendedores que ya venden pero no tienen dónde mandar a la gente. Yo escribo los textos, programo y entrego. Vos no hacés nada.
+        Hago páginas web para emprendedores que ya venden pero no tienen dónde mandar a la gente. Yo escribo los textos, programo y entrego. <strong style="color:rgba(254,249,240,0.8);">Vos no hacés nada.</strong>
       </p>
       <div class="hero-actions reveal d3">
-        <a class="btn-rojo" href="https://wa.me/5493625142700?text=Hola%20Nadia%2C%20quiero%20conocer%20m%C3%A1s%20sobre%20tus%20servicios%20web" target="_blank" rel="noopener">Escribime por WhatsApp</a>
+        <a class="btn-rojo" href="https://wa.me/5493625142700?text=Hola%20Nadia%2C%20quiero%20conocer%20m%C3%A1s%20sobre%20tus%20servicios%20web" target="_blank" rel="noopener">Consultáme sin compromiso →</a>
         <a class="btn-ghost" href="#services">Ver servicios →</a>
       </div>
-      <p class="reveal d3" style="margin-top: 20px; font-size: 0.75rem; color: rgba(254,249,240,0.45); font-family: var(--sans);"><span style="display:inline-block; width:6px; height:6px; background:#25D366; border-radius:50%; margin-right:6px; transform:translateY(-1px);"></span>Disponible para proyectos nuevos. Consultame sin compromiso.</p>
+      <p class="reveal d3" style="margin-top: 20px; font-size: 0.75rem; color: rgba(254,249,240,0.45); font-family: var(--sans);"><span style="display:inline-block; width:6px; height:6px; background:#25D366; border-radius:50%; margin-right:6px; transform:translateY(-1px);"></span>Disponible ahora &middot; Entrego en 7 días o te devuelvo la seña.</p>
     </div>
   </div>
   <div class="hero-bg-num" aria-hidden="true">nw_</div>
-</section>
-
-<!-- PROBLEM -->
-<section id="problem" class="section">
-  <div class="section-inner">
-    <span class="label reveal">Por qué importa</span>
-    <h2 class="h2 reveal d1">Tu web es la primera<br><em>impresión que no controlás.</em></h2>
-    <p class="lead reveal d2">Si alguien te busca y lo que encuentra no está a la altura, ya perdiste esa venta. Sin saberlo.</p>
-    <div class="problem-grid">
-      <div class="problem-card reveal d1">
-        <div class="prob-accent"></div>
-        <span class="prob-num">///</span>
-        <p class="prob-quote">"El link que mando no genera confianza."</p>
-        <p class="prob-note">Tu negocio funciona, tu trabajo es bueno. Pero lo que la gente ve online no lo refleja. Esa brecha te cuesta clientes todos los días.</p>
-      </div>
-      <div class="problem-card reveal d2">
-        <div class="prob-accent"></div>
-        <span class="prob-num">///</span>
-        <p class="prob-quote">"Pierdo tiempo respondiendo siempre lo mismo."</p>
-        <p class="prob-note">Precio, horario, cómo funciona. Todo eso puede estar en tu web y ahorrarte horas de WhatsApp por semana.</p>
-      </div>
-      <div class="problem-card reveal d3">
-        <div class="prob-accent"></div>
-        <span class="prob-num">///</span>
-        <p class="prob-quote">"No parezco profesional online."</p>
-        <p class="prob-note">La gente te busca en Google, abre el link y cierra. No porque tu servicio sea malo — sino porque la primera impresión no acompaña.</p>
-      </div>
-    </div>
-    <div class="reveal d3" style="text-align:center; margin-top:48px;">
-      <a class="btn-rojo" href="#services" style="display:inline-block;">Ver cómo lo resuelvo →</a>
-    </div>
-  </div>
 </section>
 
 <!-- SERVICES -->
@@ -1022,6 +994,38 @@ footer {
     </div>
     <div class="pricing-note reveal">
       <strong>Sobre los precios:</strong> Se expresan en dólares para que no pierdan vigencia con la inflación. El pago se hace en pesos argentinos al tipo de cambio del día que acordamos. 50% al arrancar, 50% al entregar.
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section id="problem" class="section">
+  <div class="section-inner">
+    <span class="label reveal">Por qué importa</span>
+    <h2 class="h2 reveal d1">Tu web es la primera<br><em>impresión que no controlás.</em></h2>
+    <p class="lead reveal d2">Si alguien te busca y lo que encuentra no está a la altura, ya perdiste esa venta. Sin saberlo.</p>
+    <div class="problem-grid">
+      <div class="problem-card reveal d1">
+        <div class="prob-accent"></div>
+        <span class="prob-num">///</span>
+        <p class="prob-quote">"El link que mando no genera confianza."</p>
+        <p class="prob-note">Tu negocio funciona, tu trabajo es bueno. Pero lo que la gente ve online no lo refleja. Esa brecha te cuesta clientes todos los días.</p>
+      </div>
+      <div class="problem-card reveal d2">
+        <div class="prob-accent"></div>
+        <span class="prob-num">///</span>
+        <p class="prob-quote">"Pierdo tiempo respondiendo siempre lo mismo."</p>
+        <p class="prob-note">Precio, horario, cómo funciona. Todo eso puede estar en tu web y ahorrarte horas de WhatsApp por semana.</p>
+      </div>
+      <div class="problem-card reveal d3">
+        <div class="prob-accent"></div>
+        <span class="prob-num">///</span>
+        <p class="prob-quote">"No parezco profesional online."</p>
+        <p class="prob-note">La gente te busca en Google, abre el link y cierra. No porque tu servicio sea malo — sino porque la primera impresión no acompaña.</p>
+      </div>
+    </div>
+    <div class="reveal d3" style="text-align:center; margin-top:48px;">
+      <a class="btn-rojo" href="#work" style="display:inline-block;">Ver proyectos reales →</a>
     </div>
   </div>
 </section>
