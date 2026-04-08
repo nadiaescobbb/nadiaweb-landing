@@ -452,56 +452,70 @@ nav.scrolled {
 
 /* ── PROCESS ── */
 #process { background: var(--white); }
-.process-list {
-  max-width: 680px;
-  margin-top: 0;
-}
-.process-item {
+.process-grid {
   display: grid;
-  grid-template-columns: 64px 1fr;
-  gap: 28px;
-  padding: 36px 0;
-  border-bottom: 1px solid rgba(3,27,62,0.07);
-  align-items: start;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
 }
-.process-item:last-child { border-bottom: none; }
-.pi-num {
+.process-card {
+  background: var(--white);
+  border: 1px solid rgba(3,27,62,0.08);
+  padding: 40px 32px;
+  position: relative;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.process-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(3,27,62,0.06);
+}
+.pc-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(3,27,62,0.08);
+}
+.pc-num {
   font-family: var(--serif);
-  font-size: 2.8rem;
-  font-weight: 700;
-  color: rgba(3,27,62,0.06);
-  line-height: 1;
-  text-align: right;
-}
-.pi-day {
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--rojo);
-  margin-bottom: 6px;
-}
-.pi-title {
-  font-family: var(--serif);
-  font-size: 1.2rem;
+  font-size: 2rem;
+  font-style: italic;
   font-weight: 700;
   color: var(--azul);
-  margin-bottom: 10px;
+  line-height: 1;
 }
-.pi-desc {
-  font-size: 0.88rem;
+.pc-day {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--rojo);
+  background: rgba(184, 50, 50, 0.05);
+  padding: 6px 12px;
+  border-radius: 100px;
+}
+.pc-title {
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--azul);
+  margin-bottom: 12px;
+}
+.pc-desc {
+  font-size: 0.84rem;
   color: var(--azul-60);
-  line-height: 1.8;
+  line-height: 1.7;
 }
 .process-note {
-  margin-top: 40px;
+  margin: 48px auto 0;
   max-width: 680px;
   padding: 20px 24px;
-  background: var(--gray-50);
-  border-left: 3px solid var(--azul-10);
+  background: var(--white);
+  border: 1px solid rgba(3,27,62,0.12);
   font-size: 0.84rem;
   color: var(--azul-60);
   line-height: 1.8;
+  text-align: center;
 }
 .process-note strong { color: var(--azul); font-weight: 500; }
 
@@ -725,9 +739,9 @@ footer {
 /* ── RESPONSIVE ── */
 @media (max-width: 1000px) {
   .hero-wrap { grid-template-columns: 1fr; gap: 48px; }
-  .problem-grid, .services-grid { grid-template-columns: 1fr; gap: 2px; }
-  .problem-grid { background: transparent; gap: 16px; }
-  .problem-card { border: 1px solid rgba(3,27,62,0.08); }
+  .problem-grid, .services-grid, .process-grid { grid-template-columns: 1fr; gap: 2px; }
+  .problem-grid, .process-grid { background: transparent; gap: 16px; }
+  .problem-card, .process-card { border: 1px solid rgba(3,27,62,0.08); }
   .services-grid { gap: 16px; }
 }
 @media (max-width: 640px) {
@@ -735,7 +749,6 @@ footer {
   .fab-wa { bottom: 20px; right: 20px; width: 54px; height: 54px; }
   .fab-wa svg { width: 28px; height: 28px; }
   .nav-links { display: none; }
-  .process-item { grid-template-columns: 48px 1fr; gap: 16px; }
   .about-details { flex-direction: column; gap: 20px; }
   footer { flex-direction: column; align-items: flex-start; }
 }
@@ -877,41 +890,39 @@ footer {
 <!-- PROCESS -->
 <section id="process" class="section">
   <div class="section-inner">
-    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;">
-      <div>
-        <span class="label reveal">El proceso</span>
-        <h2 class="h2 reveal d1">3 pasos.<br><em>Sin reuniones eternas.</em></h2>
-        <p class="lead reveal d2" style="margin-bottom: 0;">Diseñado para que vos no tengás que hacer nada salvo llenar un formulario y revisar el resultado.</p>
+    <div style="text-align: center; max-width: 680px; margin: 0 auto 64px;">
+      <span class="label reveal">El proceso</span>
+      <h2 class="h2 reveal d1">3 pasos.<br><em>Sin reuniones eternas.</em></h2>
+      <p class="lead reveal d2" style="margin: 0 auto;">Diseñado para que vos no tengás que hacer nada salvo llenar un formulario y revisar el resultado.</p>
+    </div>
+    <div class="process-grid reveal d3">
+      <div class="process-card">
+        <div class="pc-head">
+          <span class="pc-num">01.</span>
+          <span class="pc-day">Día 1</span>
+        </div>
+        <div class="pc-title">Me contás de tu negocio</div>
+        <p class="pc-desc">Un formulario corto — 10 minutos. Con eso tengo todo lo que necesito. No hay llamada previa, ni reuniones de descubrimiento.</p>
       </div>
-      <div class="process-list reveal d2">
-        <div class="process-item">
-          <div class="pi-num">01</div>
-          <div>
-            <div class="pi-day">Día 1</div>
-            <div class="pi-title">Me contás de tu negocio</div>
-            <p class="pi-desc">Un formulario corto — 10 minutos. Con eso tengo todo lo que necesito. No hay llamada previa, no hay reunión de descubrimiento.</p>
-          </div>
+      <div class="process-card">
+        <div class="pc-head">
+          <span class="pc-num">02.</span>
+          <span class="pc-day">Días 2 al 6</span>
         </div>
-        <div class="process-item">
-          <div class="pi-num">02</div>
-          <div>
-            <div class="pi-day">Días 2 al 6</div>
-            <div class="pi-title">Yo armo todo</div>
-            <p class="pi-desc">Escribo los textos, diseño y programo. Vos no hacés nada. Si necesito confirmar algo, te mando un mensaje corto.</p>
-          </div>
-        </div>
-        <div class="process-item">
-          <div class="pi-num">03</div>
-          <div>
-            <div class="pi-day">Día 7</div>
-            <div class="pi-title">Revisás y lanzamos</div>
-            <p class="pi-desc">Una ronda de ajustes. Publicamos. Te entrego acceso propio a todo. La web es tuya.</p>
-          </div>
-        </div>
-        <div class="process-note">
-          <strong>Después del lanzamiento:</strong> 7 días de soporte incluido. Mantenimiento mensual opcional <strong>USD 40/mes</strong>.
-        </div>
+        <div class="pc-title">Yo armo todo</div>
+        <p class="pc-desc">Escribo los textos con IA, diseño y programo. Vos no hacés nada. Si necesito confirmar algo vital, te mando un mensaje corto.</p>
       </div>
+      <div class="process-card">
+        <div class="pc-head">
+          <span class="pc-num">03.</span>
+          <span class="pc-day">Día 7</span>
+        </div>
+        <div class="pc-title">Revisás y lanzamos</div>
+        <p class="pc-desc">Hacemos una ronda de ajustes si es necesario y publicamos. Te entrego el acceso propio a todo. La web ahora es tuya.</p>
+      </div>
+    </div>
+    <div class="process-note reveal d4">
+      <strong>Después del lanzamiento:</strong> 7 días de soporte incluido por mi cuenta. Mantenimiento mensual opcional <strong>USD 40/mes</strong>.
     </div>
   </div>
 </section>
