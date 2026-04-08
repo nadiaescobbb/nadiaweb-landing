@@ -68,13 +68,14 @@ nav {
   height: 68px;
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 var(--page-x);
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background 0.3s, border-color 0.3s, box-shadow 0.3s, backdrop-filter 0.3s;
+}
+nav.scrolled {
   background: rgba(255,255,255,0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.3s, box-shadow 0.3s;
-}
-nav.scrolled {
   border-color: var(--azul-10);
   box-shadow: 0 1px 32px rgba(3,27,62,0.05);
 }
@@ -82,10 +83,12 @@ nav.scrolled {
   font-family: var(--serif);
   font-style: italic;
   font-size: 1.25rem;
-  color: var(--azul);
+  color: var(--beige);
   text-decoration: none;
   letter-spacing: -0.01em;
+  transition: color 0.3s;
 }
+nav.scrolled .nav-logo { color: var(--azul); }
 .nav-links {
   display: flex; gap: 2.8rem; list-style: none;
 }
@@ -94,11 +97,13 @@ nav.scrolled {
   font-size: 0.65rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--azul-35);
+  color: rgba(254,249,240,0.6);
   text-decoration: none;
   transition: color 0.2s;
 }
-.nav-links a:hover { color: var(--azul); }
+.nav-links a:hover { color: var(--beige); }
+nav.scrolled .nav-links a { color: var(--azul-35); }
+nav.scrolled .nav-links a:hover { color: var(--azul); }
 .nav-cta {
   font-family: var(--mono);
   font-size: 0.65rem;
@@ -108,9 +113,11 @@ nav.scrolled {
   background: var(--azul);
   padding: 10px 24px;
   text-decoration: none;
-  transition: background 0.2s, transform 0.15s;
   display: inline-block;
+  opacity: 0; pointer-events: none; transform: translateY(-8px);
+  transition: all 0.3s;
 }
+nav.scrolled .nav-cta { opacity: 1; pointer-events: auto; transform: translateY(0); }
 .nav-cta:hover { background: #0a2850; transform: translateY(-1px); }
 
 /* ── WRAPPER ── */
@@ -835,10 +842,11 @@ footer {
   display: block;
   width: 24px;
   height: 2px;
-  background: var(--azul);
+  background: var(--beige);
   border-radius: 2px;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
 }
+nav.scrolled .nav-burger span { background: var(--azul); }
 .nav-mobile-menu {
   display: none;
   position: fixed;
@@ -1007,19 +1015,19 @@ footer {
     <div class="problem-grid">
       <div class="problem-card reveal d1">
         <div class="prob-accent"></div>
-        <span class="prob-num">///</span>
+        <span class="prob-num">01 /</span>
         <p class="prob-quote">"El link que mando no genera confianza."</p>
         <p class="prob-note">Tu negocio funciona, tu trabajo es bueno. Pero lo que la gente ve online no lo refleja. Esa brecha te cuesta clientes todos los días.</p>
       </div>
       <div class="problem-card reveal d2">
         <div class="prob-accent"></div>
-        <span class="prob-num">///</span>
+        <span class="prob-num">02 /</span>
         <p class="prob-quote">"Pierdo tiempo respondiendo siempre lo mismo."</p>
         <p class="prob-note">Precio, horario, cómo funciona. Todo eso puede estar en tu web y ahorrarte horas de WhatsApp por semana.</p>
       </div>
       <div class="problem-card reveal d3">
         <div class="prob-accent"></div>
-        <span class="prob-num">///</span>
+        <span class="prob-num">03 /</span>
         <p class="prob-quote">"No parezco profesional online."</p>
         <p class="prob-note">La gente te busca en Google, abre el link y cierra. No porque tu servicio sea malo — sino porque la primera impresión no acompaña.</p>
       </div>
@@ -1205,7 +1213,7 @@ footer {
     <div class="reveal d2" style="display:inline-block; font-family:var(--mono); font-size:0.6rem; letter-spacing:0.12em; color:rgba(254,249,240,0.6); background:rgba(255,255,255,0.06); padding:8px 20px; border-radius:100px; margin-bottom:32px; border:1px solid rgba(255,255,255,0.12); text-transform:uppercase;">
       <span style="display:inline-block; width:7px; height:7px; background:#25D366; border-radius:50%; margin-right:8px; transform:translateY(-1px);"></span>Solo tomo 3 proyectos por mes &mdash; Hay cupos disponibles
     </div>
-    <a class="btn-rojo reveal d3" href="https://wa.me/5493625142700?text=Hola%20Nadia%2C%20quiero%20conocer%20m%C3%A1s%20sobre%20tus%20servicios%20web" target="_blank" rel="noopener" style="font-size:0.7rem; padding:16px 40px;">
+    <a class="btn-rojo reveal d3" href="https://wa.me/5493625142700?text=Hola%20Nadia%2C%20quiero%20conocer%20m%C3%A1s%20sobre%20tus%20servicios%20web" target="_blank" rel="noopener">
       Escribime por WhatsApp
     </a>
     <p class="cta-note reveal d4">Escribime hoy y arrancamos con el boceto de tu nueva web. Sin compromiso.</p>
