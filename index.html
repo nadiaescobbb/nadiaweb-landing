@@ -814,6 +814,63 @@ footer {
   .about-details { flex-direction: column; gap: 20px; }
   footer { flex-direction: column; align-items: flex-start; }
 }
+/* ── HAMBURGER MENU (MOBILE) ── */
+.nav-burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+  background: none;
+  border: none;
+}
+.nav-burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--beige);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.nav-mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--azul);
+  z-index: 1000;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+.nav-mobile-menu.open { display: flex; }
+.nav-mobile-menu a {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--beige);
+  text-decoration: none;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+.nav-mobile-menu a:hover { opacity: 1; }
+.nav-mobile-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: none;
+  border: none;
+  color: var(--beige);
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+  opacity: 0.6;
+}
+.nav-mobile-close:hover { opacity: 1; }
+@media (max-width: 640px) {
+  .nav-burger { display: flex; }
+}
+
 </style>
 </head>
 <body>
@@ -828,8 +885,24 @@ footer {
     <li><a href="#about">Sobre mí</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
-  <a class="nav-cta" href="https://wa.me/5493625142700?text=Hola%20Nadia%2C%20quiero%20conocer%20m%C3%A1s%20sobre%20tus%20servicios%20web" target="_blank" rel="noopener">WhatsApp →</a>
+  <div style="display:flex; align-items:center; gap:16px;">
+    <a class="nav-cta" href="https://wa.me/5493625142700?text=Hola%20Nadia%2C%20quiero%20conocer%20m%C3%A1s%20sobre%20tus%20servicios%20web" target="_blank" rel="noopener">WhatsApp →</a>
+    <button class="nav-burger" id="burgerBtn" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="nav-mobile-menu" id="mobileMenu">
+  <button class="nav-mobile-close" id="mobileClose" aria-label="Cerrar menú">×</button>
+  <a href="#services" onclick="closeMobileMenu()">Servicios</a>
+  <a href="#work" onclick="closeMobileMenu()">Proyectos</a>
+  <a href="#process" onclick="closeMobileMenu()">Proceso</a>
+  <a href="#about" onclick="closeMobileMenu()">Sobre mí</a>
+  <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
+  <a href="https://wa.me/5493625142700?text=Hola%20Nadia%2C%20quiero%20conocer%20m%C3%A1s%20sobre%20tus%20servicios%20web" target="_blank" rel="noopener" style="font-family:var(--mono); font-size:1rem; color:var(--rojo); letter-spacing:0.1em;">Escribime →</a>
+</div>
 
 <!-- HERO -->
 <section id="hero">
@@ -837,7 +910,7 @@ footer {
     <div>
       <p class="hero-eyebrow reveal">nadiaweb_ · diseño y desarrollo</p>
       <div class="reveal d1" style="display:inline-block; font-family:var(--mono); font-size:0.6rem; letter-spacing:0.1em; color:rgba(254,249,240,0.6); background:rgba(255,255,255,0.06); padding:6px 14px; border-radius:100px; margin-bottom:24px; border:1px solid rgba(255,255,255,0.1);">
-        ✓ Proceso de 7 días · Entrega garantizada
+        ✓ Proceso de 7 días · Si no entrego en plazo, te devuelvo la seña
       </div>
       <h1 class="hero-h1 reveal d1">
         Tu negocio existe.<br>
@@ -881,6 +954,9 @@ footer {
         <p class="prob-quote">"No parezco profesional online."</p>
         <p class="prob-note">La gente te busca en Google, abre el link y cierra. No porque tu servicio sea malo — sino porque la primera impresión no acompaña.</p>
       </div>
+    </div>
+    <div class="reveal d3" style="text-align:center; margin-top:48px;">
+      <a class="btn-rojo" href="#services" style="display:inline-block;">Ver cómo lo resuelvo →</a>
     </div>
   </div>
 </section>
@@ -1027,8 +1103,12 @@ footer {
 <section id="about" class="section">
   <div class="section-inner">
     <div class="about-grid" style="display:grid; grid-template-columns: 280px 1fr; gap: 60px; align-items: start;">
-      <div class="about-photo reveal d1" style="background:#0a2850; border-radius:4px; aspect-ratio:3/4; position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center;">
-        <span style="color:rgba(254,249,240,0.3); font-family:var(--mono); font-size:0.6rem; text-align:center; padding:20px; border:1px dashed rgba(254,249,240,0.2); width:calc(100% - 16px); height:calc(100% - 16px); display:flex; align-items:center; justify-content:center;">[Tu Foto Aquí]<br>Recomendado: Retrato profesional, sonriendo, fondo despejado.</span>
+      <div class="about-photo reveal d1" style="background:#0a2850; border-radius:4px; aspect-ratio:3/4; position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:16px;">
+        <div style="width:96px; height:96px; border-radius:50%; background:var(--rojo); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+          <span style="font-family:var(--serif); font-size:2.2rem; font-weight:700; color:var(--beige); line-height:1;">N</span>
+        </div>
+        <span style="font-family:var(--mono); font-size:0.6rem; letter-spacing:0.15em; color:rgba(254,249,240,0.35); text-transform:uppercase;">nadiaweb_</span>
+        <span style="font-family:var(--mono); font-size:0.55rem; color:rgba(254,249,240,0.2); text-align:center; padding:0 24px;">Resistencia, Chaco</span>
       </div>
       <div class="about-inner" style="max-width:100%;">
         <span class="about-eyebrow reveal">Sobre mí</span>
@@ -1165,6 +1245,23 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 // Nav scroll
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 50), { passive: true });
+
+// Hamburger menu
+const burgerBtn = document.getElementById('burgerBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+const mobileClose = document.getElementById('mobileClose');
+
+function openMobileMenu() {
+  mobileMenu.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeMobileMenu() {
+  mobileMenu.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+if (burgerBtn) burgerBtn.addEventListener('click', openMobileMenu);
+if (mobileClose) mobileClose.addEventListener('click', closeMobileMenu);
 </script>
 </body>
 </html>
