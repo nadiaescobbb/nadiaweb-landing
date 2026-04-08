@@ -1,681 +1,1020 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
-<meta charset="utf-8"/>
-<link rel="icon" type="image/x-icon" href="/assets/favicon.ico"/>
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"/>
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"/>
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-
-<!-- SEO primario -->
-<title>Nadia Web | Páginas web para emprendedores argentinos</title>
-<meta name="description" content="Hago páginas web para emprendedores argentinos que ya venden pero todavía no tienen dónde mandar a la gente. Simple, lista en días, con textos incluidos."/>
-<meta name="keywords" content="diseño web Argentina, landing page argentina, páginas web Resistencia Chaco, freelance web argentina, página web para negocio, página web emprendedores"/>
-<meta name="author" content="Nadia Web"/>
-<meta name="robots" content="index, follow"/>
-<link rel="canonical" href="https://nadiaweb-landing.vercel.app/"/>
-
-<!-- OpenGraph -->
-<meta property="og:type" content="website"/>
-<meta property="og:url" content="https://nadiaweb-landing.vercel.app/"/>
-<meta property="og:title" content="Nadia Web | tu negocio existe. que online también se entienda."/>
-<meta property="og:description" content="Páginas web para emprendedores argentinos. Simple, lista en días, con textos incluidos."/>
-<meta property="og:image" content="https://nadiaweb-landing.vercel.app/og-image.jpg"/>
-<meta property="og:locale" content="es_AR"/>
-<meta property="og:site_name" content="Nadia Web"/>
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Nadia Web | tu negocio existe. que online también se entienda."/>
-<meta name="twitter:description" content="Páginas web para emprendedores argentinos. Simple, lista en días, con textos incluidos."/>
-<meta name="twitter:image" content="https://nadiaweb-landing.vercel.app/og-image.jpg"/>
-
-<!-- Schema.org -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Nadia Web",
-  "description": "Páginas web para emprendedores argentinos que ya venden pero todavía no tienen dónde mandar a la gente.",
-  "url": "https://nadiaweb-landing.vercel.app",
-  "telephone": "+5493625142700",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Resistencia",
-    "addressRegion": "Chaco",
-    "addressCountry": "AR"
-  },
-  "areaServed": "AR",
-  "priceRange": "$180.000 - $520.000 ARS",
-  "sameAs": ["https://instagram.com/nadiaweb_"]
-}
-</script>
-
-<meta http-equiv="X-Content-Type-Options" content="nosniff"/>
-<meta http-equiv="X-Frame-Options" content="SAMEORIGIN"/>
-<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin"/>
-<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()"/>
-
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,700&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-
-<script id="tailwind-config">
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        "colors": {
-          "on-surface-variant": "#44474e",
-          "inverse-primary": "#b3c6f3",
-          "on-secondary-fixed-variant": "#36485b",
-          "on-tertiary-fixed": "#271900",
-          "on-primary-fixed-variant": "#33476c",
-          "tertiary": "#271900",
-          "primary-container": "#1c3054",
-          "inverse-on-surface": "#f5f0e7",
-          "error-container": "#ffdad6",
-          "on-tertiary-container": "#ae956c",
-          "on-secondary-fixed": "#091d2e",
-          "tertiary-fixed-dim": "#dec397",
-          "on-primary-fixed": "#031b3e",
-          "surface-bright": "#fef9f0",
-          "on-error": "#ffffff",
-          "surface-tint": "#4b5e85",
-          "primary": "#031b3e",
-          "on-background": "#1d1c16",
-          "surface": "#fef9f0",
-          "secondary": "#4e6073",
-          "surface-dim": "#ded9d1",
-          "tertiary-container": "#3e2e0e",
-          "on-surface": "#1d1c16",
-          "inverse-surface": "#32302a",
-          "surface-container": "#f2ede4",
-          "primary-fixed": "#d8e2ff",
-          "on-secondary": "#ffffff",
-          "on-primary-container": "#8598c2",
-          "outline": "#75777f",
-          "surface-container-low": "#f8f3ea",
-          "on-tertiary-fixed-variant": "#574422",
-          "on-error-container": "#93000a",
-          "surface-container-highest": "#e7e2d9",
-          "surface-variant": "#e7e2d9",
-          "secondary-fixed-dim": "#b5c8df",
-          "primary-fixed-dim": "#b3c6f3",
-          "on-secondary-container": "#526478",
-          "background": "#fef9f0",
-          "surface-container-lowest": "#ffffff",
-          "secondary-fixed": "#d1e4fb",
-          "secondary-container": "#cfe2f9",
-          "tertiary-fixed": "#fcdfb1",
-          "outline-variant": "#c5c6cf",
-          "on-tertiary": "#ffffff",
-          "surface-container-high": "#ede8df",
-          "error": "#ba1a1a",
-          "on-primary": "#ffffff"
-        },
-        "borderRadius": {
-          "DEFAULT": "0rem",
-          "lg": "0rem",
-          "xl": "0rem",
-          "full": "9999px"
-        },
-        "fontFamily": {
-          "headline": ["Newsreader", "serif"],
-          "body": ["Space Grotesk", "monospace"],
-          "label": ["Space Grotesk", "monospace"]
-        }
-      },
-    },
-  }
-</script>
-
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>nadiaweb_ — Páginas web para negocios reales</title>
+<meta name="description" content="Diseño y desarrollo web para emprendedores argentinos. Landing pages, webs institucionales y tiendas online. Copy incluido, entrega en días."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400;1,700&family=Poppins:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
-  body { cursor: none; background-color: #fef9f0; }
-  .custom-cursor { width: 8px; height: 8px; background: #031b3e; border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transition: transform 0.2s ease, width 0.3s ease, height 0.3s ease; }
-  .cursor-hover { width: 40px; height: 40px; background: transparent; border: 1px solid #031b3e; transform: translate(-50%, -50%); }
-  .marquee { white-space: nowrap; overflow: hidden; display: flex; }
-  .marquee-content { display: flex; animation: scroll 30s linear infinite; }
-  @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-  .fade-up { opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1); }
-  .fade-up.visible { opacity: 1; transform: translateY(0); }
-  #mobile-menu { display: none; flex-direction: column; gap: 24px; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #031b3e; z-index: 200; align-items: center; justify-content: center; }
-  #mobile-menu.open { display: flex; }
-  #mobile-menu a { color: #fef9f0; font-size: 1.5rem; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; font-family: 'Space Grotesk', monospace; }
-  #mobile-menu-close { position: absolute; top: 24px; right: 24px; color: #fef9f0; background: none; border: none; cursor: pointer; font-size: 2rem; line-height: 1; }
-  .wa-float { position: fixed; bottom: 28px; right: 28px; z-index: 1000; background: #25D366; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.4); transition: transform 0.2s ease, box-shadow 0.2s ease; text-decoration: none; }
-  .wa-float:hover { transform: scale(1.08); box-shadow: 0 6px 28px rgba(37,211,102,0.5); }
-  .wa-float svg { width: 32px; height: 32px; fill: white; }
-  .wa-float::before { content: "Escribime"; position: absolute; right: 70px; background: #031b3e; color: #fef9f0; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; padding: 6px 12px; white-space: nowrap; opacity: 0; transition: opacity 0.2s; font-family: 'Space Grotesk', monospace; }
-  .wa-float:hover::before { opacity: 1; }
-  details summary::-webkit-details-marker { display: none; }
-  @media (max-width: 768px) { body { cursor: auto; } .custom-cursor { display: none; } }
+/* ── RESET & TOKENS ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --azul:    #031b3e;
+  --azul-90: rgba(3,27,62,0.9);
+  --azul-60: rgba(3,27,62,0.6);
+  --azul-35: rgba(3,27,62,0.35);
+  --azul-10: rgba(3,27,62,0.07);
+  --rojo:    #B83232;
+  --rojo-90: rgba(184,50,50,0.9);
+  --beige:   #fef9f0;
+  --beige2:  #f5f0e8;
+  --white:   #ffffff;
+  --gray-50: #f8f8f6;
+  --serif:   'Playfair Display', Georgia, serif;
+  --sans:    'Poppins', system-ui, sans-serif;
+  --mono:    'JetBrains Mono', monospace;
+  --page-x:  clamp(28px, 7vw, 96px);
+  --max-w:   1120px;
+}
+
+html { font-size: 16px; scroll-behavior: smooth; }
+body {
+  background: var(--white);
+  color: var(--azul);
+  font-family: var(--sans);
+  font-weight: 400;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ── SCROLL REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.65s cubic-bezier(.22,.68,0,1.2), transform 0.65s cubic-bezier(.22,.68,0,1.2);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.d1 { transition-delay: 0.08s; }
+.d2 { transition-delay: 0.16s; }
+.d3 { transition-delay: 0.24s; }
+.d4 { transition-delay: 0.34s; }
+.d5 { transition-delay: 0.44s; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  height: 68px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 var(--page-x);
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+nav.scrolled {
+  border-color: var(--azul-10);
+  box-shadow: 0 1px 32px rgba(3,27,62,0.05);
+}
+.nav-logo {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--azul);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+.nav-links {
+  display: flex; gap: 2.8rem; list-style: none;
+}
+.nav-links a {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--azul-35);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--azul); }
+.nav-cta {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--azul);
+  padding: 10px 24px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+  display: inline-block;
+}
+.nav-cta:hover { background: #0a2850; transform: translateY(-1px); }
+
+/* ── WRAPPER ── */
+.wrap {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--page-x);
+}
+
+/* ── HERO ── */
+#hero {
+  background: var(--azul);
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding: 140px var(--page-x) 100px;
+  position: relative; overflow: hidden;
+}
+.hero-wrap {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 80px;
+  align-items: center;
+}
+.hero-eyebrow {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(254,249,240,0.3);
+  margin-bottom: 28px;
+}
+.hero-h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.6rem, 5.5vw, 5rem);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  color: var(--beige);
+  margin-bottom: 24px;
+}
+.hero-h1 em {
+  font-style: italic;
+  font-weight: 400;
+  color: rgba(254,249,240,0.55);
+}
+.hero-sub {
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  font-weight: 300;
+  color: rgba(254,249,240,0.5);
+  max-width: 480px;
+  line-height: 1.85;
+  margin-bottom: 40px;
+}
+.hero-actions {
+  display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+}
+.btn-rojo {
+  background: var(--rojo);
+  color: var(--white);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 15px 32px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.2s, transform 0.2s;
+  border: none; cursor: pointer;
+}
+.btn-rojo:hover { background: #9a2424; transform: translateY(-2px); }
+.btn-ghost {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(254,249,240,0.35);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(254,249,240,0.15);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.btn-ghost:hover { color: rgba(254,249,240,0.7); border-color: rgba(254,249,240,0.4); }
+
+/* Hero card — price list */
+.hero-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.09);
+  padding: 32px 28px;
+  position: relative;
+}
+.hero-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--rojo);
+}
+.hero-card-label {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rojo);
+  margin-bottom: 20px;
+}
+.hero-card-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.hero-card-row:last-of-type { border-bottom: none; }
+.hcr-name {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: rgba(254,249,240,0.5);
+}
+.hcr-price {
+  font-family: var(--mono);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--beige);
+}
+.hero-card-note {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.78rem;
+  color: rgba(254,249,240,0.28);
+  line-height: 1.55;
+}
+
+/* Hero bg number */
+.hero-bg-num {
+  position: absolute;
+  right: -40px; bottom: -80px;
+  font-family: var(--serif);
+  font-size: clamp(160px, 26vw, 320px);
+  font-weight: 700;
+  font-style: italic;
+  color: rgba(255,255,255,0.018);
+  line-height: 1;
+  pointer-events: none; user-select: none;
+}
+
+/* ── SHARED SECTION ── */
+.section {
+  padding: 112px var(--page-x);
+  position: relative;
+}
+.section-inner { max-width: var(--max-w); margin: 0 auto; }
+
+.label {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--rojo);
+  margin-bottom: 14px;
+  display: block;
+}
+.h2 {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3.8vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--azul);
+  margin-bottom: 16px;
+}
+.h2 em { font-style: italic; font-weight: 400; }
+.lead {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--azul-60);
+  max-width: 560px;
+  line-height: 1.85;
+  margin-bottom: 64px;
+}
+
+/* ── PROBLEM ── */
+#problem { background: var(--white); }
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--azul-10);
+}
+.problem-card {
+  background: var(--white);
+  padding: 48px 40px;
+  position: relative;
+  transition: background 0.25s;
+}
+.problem-card:hover { background: #fafaf9; }
+.prob-num {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  color: var(--azul-35);
+  margin-bottom: 20px;
+  display: block;
+}
+.prob-quote {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.4;
+  color: var(--azul);
+  margin-bottom: 16px;
+}
+.prob-note {
+  font-size: 0.83rem;
+  color: var(--azul-60);
+  line-height: 1.75;
+}
+.prob-accent {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--azul-10);
+  transition: background 0.25s;
+}
+.problem-card:hover .prob-accent { background: var(--rojo); }
+
+/* ── SERVICES ── */
+#services { background: var(--gray-50); }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.svc-card {
+  background: var(--white);
+  border: 1px solid rgba(3,27,62,0.08);
+  padding: 40px 36px 36px;
+  display: flex; flex-direction: column;
+  position: relative;
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+}
+.svc-card:hover {
+  border-color: rgba(3,27,62,0.18);
+  box-shadow: 0 8px 40px rgba(3,27,62,0.07);
+  transform: translateY(-2px);
+}
+.svc-card.featured {
+  background: var(--azul);
+  border-color: var(--azul);
+}
+.svc-card.featured:hover {
+  border-color: #0a2850;
+  box-shadow: 0 12px 48px rgba(3,27,62,0.22);
+}
+.svc-num {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--azul-35);
+  margin-bottom: 24px;
+  display: block;
+}
+.svc-card.featured .svc-num { color: rgba(254,249,240,0.28); }
+.svc-name {
+  font-family: var(--serif);
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1.08;
+  color: var(--azul);
+  margin-bottom: 20px;
+}
+.svc-card.featured .svc-name { color: var(--beige); }
+.svc-price-usd {
+  font-family: var(--mono);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--rojo);
+  margin-bottom: 4px;
+}
+.svc-card.featured .svc-price-usd { color: #f9c06a; }
+.svc-price-ars {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--azul-35);
+  margin-bottom: 28px;
+}
+.svc-card.featured .svc-price-ars { color: rgba(254,249,240,0.25); }
+.svc-line {
+  width: 100%; height: 1px;
+  background: rgba(3,27,62,0.08);
+  margin-bottom: 24px;
+}
+.svc-card.featured .svc-line { background: rgba(254,249,240,0.1); }
+.svc-list {
+  list-style: none; flex: 1;
+  font-size: 0.85rem; line-height: 2.1;
+  color: var(--azul-60);
+}
+.svc-card.featured .svc-list { color: rgba(254,249,240,0.55); }
+.svc-list li { display: flex; align-items: baseline; gap: 10px; }
+.svc-list li::before {
+  content: '—';
+  color: var(--rojo);
+  flex-shrink: 0;
+  font-size: 0.7rem;
+}
+.svc-card.featured .svc-list li::before { color: #f9c06a; }
+.svc-tag {
+  position: absolute;
+  top: -1px; right: 28px;
+  background: var(--rojo);
+  color: var(--white);
+  font-family: var(--mono);
+  font-size: 0.56rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+}
+.svc-delivery {
+  margin-top: 28px;
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--azul-35);
+}
+.svc-card.featured .svc-delivery { color: rgba(254,249,240,0.22); }
+
+.pricing-note {
+  margin-top: 24px;
+  display: flex; align-items: baseline; gap: 12px;
+  padding: 18px 22px;
+  background: var(--white);
+  border: 1px solid rgba(3,27,62,0.08);
+  border-left: 3px solid var(--rojo);
+  font-size: 0.83rem;
+  color: var(--azul-60);
+  line-height: 1.7;
+}
+.pricing-note strong { color: var(--azul); font-weight: 500; }
+
+/* ── PROCESS ── */
+#process { background: var(--white); }
+.process-list {
+  max-width: 680px;
+  margin-top: 0;
+}
+.process-item {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 28px;
+  padding: 36px 0;
+  border-bottom: 1px solid rgba(3,27,62,0.07);
+  align-items: start;
+}
+.process-item:last-child { border-bottom: none; }
+.pi-num {
+  font-family: var(--serif);
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: rgba(3,27,62,0.06);
+  line-height: 1;
+  text-align: right;
+}
+.pi-day {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rojo);
+  margin-bottom: 6px;
+}
+.pi-title {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--azul);
+  margin-bottom: 10px;
+}
+.pi-desc {
+  font-size: 0.88rem;
+  color: var(--azul-60);
+  line-height: 1.8;
+}
+.process-note {
+  margin-top: 40px;
+  max-width: 680px;
+  padding: 20px 24px;
+  background: var(--gray-50);
+  border-left: 3px solid var(--azul-10);
+  font-size: 0.84rem;
+  color: var(--azul-60);
+  line-height: 1.8;
+}
+.process-note strong { color: var(--azul); font-weight: 500; }
+
+/* ── ABOUT ── */
+#about { background: var(--azul); }
+.about-inner { max-width: 680px; }
+.about-eyebrow {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(254,249,240,0.28);
+  margin-bottom: 16px;
+  display: block;
+}
+.about-h2 {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  color: var(--beige);
+  margin-bottom: 32px;
+  line-height: 1.1;
+}
+.about-p {
+  font-size: 0.98rem;
+  font-weight: 300;
+  color: rgba(254,249,240,0.58);
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+.about-p em {
+  font-family: var(--serif);
+  font-style: italic;
+  color: rgba(254,249,240,0.85);
+  font-size: 1rem;
+}
+.about-rule {
+  width: 36px; height: 2px;
+  background: var(--rojo);
+  margin: 32px 0;
+}
+.about-details {
+  display: flex; gap: 32px; flex-wrap: wrap;
+}
+.about-detail-item {}
+.adi-label {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(254,249,240,0.22);
+  margin-bottom: 4px;
+}
+.adi-value {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: rgba(254,249,240,0.45);
+}
+
+/* ── FAQ ── */
+#faq { background: var(--gray-50); }
+.faq-wrap { max-width: 680px; margin-top: 0; }
+.faq-item { border-bottom: 1px solid rgba(3,27,62,0.08); }
+.faq-item:first-child { border-top: 1px solid rgba(3,27,62,0.08); }
+details summary {
+  list-style: none;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 22px 0;
+  cursor: pointer;
+  font-family: var(--serif);
+  font-size: 1rem;
+  color: var(--azul);
+  user-select: none; gap: 20px;
+}
+details summary::-webkit-details-marker { display: none; }
+.faq-arrow {
+  width: 18px; height: 18px;
+  flex-shrink: 0;
+  position: relative;
+  opacity: 0.3;
+  transition: opacity 0.2s, transform 0.25s;
+}
+.faq-arrow::before, .faq-arrow::after {
+  content: '';
+  position: absolute;
+  background: var(--azul);
+  border-radius: 1px;
+}
+.faq-arrow::before { width: 10px; height: 1.5px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+.faq-arrow::after  { width: 1.5px; height: 10px; top: 50%; left: 50%; transform: translate(-50%,-50%); transition: opacity 0.22s, transform 0.22s; }
+details[open] summary .faq-arrow { opacity: 0.7; }
+details[open] summary .faq-arrow::after { opacity: 0; transform: translate(-50%,-50%) rotate(90deg); }
+.faq-answer {
+  padding: 0 0 22px;
+  font-size: 0.86rem;
+  color: var(--azul-60);
+  line-height: 1.85;
+  max-width: 580px;
+}
+
+/* ── FINAL CTA ── */
+#cta {
+  background: var(--azul);
+  padding: 140px var(--page-x);
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+.cta-inner { max-width: 680px; margin: 0 auto; position: relative; z-index: 2; }
+.cta-label {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(254,249,240,0.25);
+  margin-bottom: 24px;
+  display: block;
+}
+.cta-h2 {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  color: var(--beige);
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+.cta-sub {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  color: rgba(254,249,240,0.45);
+  margin-bottom: 48px;
+  line-height: 1.4;
+}
+.cta-note {
+  margin-top: 18px;
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(254,249,240,0.2);
+}
+.cta-bg {
+  position: absolute;
+  bottom: -80px; left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--serif);
+  font-size: clamp(120px, 22vw, 240px);
+  font-weight: 700;
+  font-style: italic;
+  color: rgba(255,255,255,0.016);
+  white-space: nowrap;
+  pointer-events: none; user-select: none;
+  line-height: 1; z-index: 1;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--beige2);
+  border-top: 2px solid var(--rojo);
+  padding: 36px var(--page-x);
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 20px;
+}
+.footer-logo {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--azul);
+  text-decoration: none;
+}
+.footer-links {
+  display: flex; gap: 2rem; list-style: none;
+}
+.footer-links a {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--azul-35);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--azul); }
+.footer-copy {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  color: rgba(3,27,62,0.25);
+  text-transform: uppercase;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1000px) {
+  .hero-wrap { grid-template-columns: 1fr; gap: 48px; }
+  .hero-card { max-width: 380px; }
+  .problem-grid, .services-grid { grid-template-columns: 1fr; gap: 2px; }
+  .problem-grid { background: transparent; gap: 16px; }
+  .problem-card { border: 1px solid rgba(3,27,62,0.08); }
+  .services-grid { gap: 16px; }
+}
+@media (max-width: 640px) {
+  .nav-links { display: none; }
+  .process-item { grid-template-columns: 48px 1fr; gap: 16px; }
+  .about-details { flex-direction: column; gap: 20px; }
+  footer { flex-direction: column; align-items: flex-start; }
+}
 </style>
 </head>
+<body>
 
-<body class="font-body text-primary antialiased overflow-x-hidden">
+<!-- NAV -->
+<nav id="nav">
+  <a class="nav-logo" href="#">nadiaweb_</a>
+  <ul class="nav-links">
+    <li><a href="#services">Servicios</a></li>
+    <li><a href="#process">Proceso</a></li>
+    <li><a href="#about">Sobre mí</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a class="nav-cta" href="https://wa.me/5493624000000" target="_blank" rel="noopener">WhatsApp →</a>
+</nav>
 
-<!-- Cursor -->
-<div class="custom-cursor hidden md:block" id="cursor" aria-hidden="true"></div>
-
-<!-- WhatsApp flotante -->
-<a class="wa-float" href="https://wa.me/5493625142700" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-  </svg>
-</a>
-
-<!-- Menú mobile overlay -->
-<div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menú de navegación">
-  <button id="mobile-menu-close" aria-label="Cerrar menú">✕</button>
-  <a href="#proyectos">Proyectos</a>
-  <a href="#servicios">Servicios</a>
-  <a href="#proceso">Cómo funciona</a>
-  <a href="#faq">FAQ</a>
-  <a href="#contacto">Contacto</a>
-</div>
-
-<!-- Navigation -->
-<header class="fixed top-0 w-full flex justify-between items-center px-8 py-6 bg-[#fef9f0]/80 backdrop-blur-xl z-50">
-  <a href="/" class="text-2xl font-bold italic font-headline text-[#031b3e]" aria-label="Nadia Web inicio">nw</a>
-  <nav class="hidden md:flex space-x-10" aria-label="Navegación principal">
-    <a class="text-[0.75rem] uppercase tracking-[0.1em] font-label text-[#031b3e] hover:text-[#271900] transition-colors duration-300" href="#proyectos">proyectos</a>
-    <a class="text-[0.75rem] uppercase tracking-[0.1em] font-label text-[#031b3e] hover:text-[#271900] transition-colors duration-300" href="#servicios">servicios</a>
-    <a class="text-[0.75rem] uppercase tracking-[0.1em] font-label text-[#031b3e] hover:text-[#271900] transition-colors duration-300" href="#proceso">cómo funciona</a>
-    <a class="text-[0.75rem] uppercase tracking-[0.1em] font-label text-[#031b3e] hover:text-[#271900] transition-colors duration-300" href="#faq">faq</a>
-    <a class="text-[0.75rem] uppercase tracking-[0.1em] font-label text-[#031b3e] hover:text-[#271900] transition-colors duration-300" href="#contacto">contacto</a>
-  </nav>
-  <button id="mobile-menu-btn" class="md:hidden" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
-    <span class="material-symbols-outlined text-primary">menu</span>
-  </button>
-</header>
-
-<!-- ═══════════════════════════════════════════
-     HERO — reescrito: dolor real, no feature
-     ═══════════════════════════════════════════ -->
-<section class="min-h-screen flex flex-col md:flex-row pt-24" aria-labelledby="hero-headline">
-  <div class="w-full md:w-3/5 bg-surface flex flex-col justify-center px-8 md:px-24 py-12 md:py-0">
-    <span class="font-label text-[0.75rem] uppercase tracking-[0.2em] mb-6 block text-tertiary">Desarrollo web · Argentina</span>
-    <h1 id="hero-headline" class="font-headline text-[3.5rem] md:text-[5.5rem] leading-[0.9] font-bold italic mb-8">
-     tu negocio ya vende.
-      pero online no convence.
-    <p class="font-body text-lg md:text-xl mb-6 max-w-md opacity-70 leading-relaxed">
-       una web clara hace que el cliente entienda y te escriba
-    </p>
-  
-  <div class="flex flex-col sm:flex-row gap-4">
-      <a class="inline-block px-12 py-5 bg-primary text-white font-label text-[0.875rem] uppercase tracking-widest hover:bg-tertiary transition-all duration-500"
-         href="https://wa.me/5493625142700"
-         target="_blank"
-         rel="noopener noreferrer"
-         aria-label="Escribir por WhatsApp">
-        escribime →
-      </a>
-      <a class="inline-block px-12 py-5 border border-primary/20 text-primary font-label text-[0.875rem] uppercase tracking-widest hover:bg-surface-container transition-all duration-500"
-         href="#servicios">
-        ver planes
-      </a>
-    </div>
-  </div>
-  <div class="w-full md:w-2/5 bg-primary relative flex flex-col justify-end p-8 md:p-16 overflow-hidden" aria-hidden="true">
-    <div class="relative z-10 space-y-10">
-      <div class="border-t border-white/20 pt-8">
-        <div class="font-headline italic text-5xl text-surface-bright">textos incluidos</div>
-        <div class="font-label text-xs uppercase tracking-widest text-surface-bright/50 mt-2">no necesitás escribir nada</div>
-      </div>
-      <div class="border-t border-white/20 pt-8">
-        <div class="font-headline italic text-5xl text-surface-bright">pago en 2 partes</div>
-        <div class="font-label text-xs uppercase tracking-widest text-surface-bright/50 mt-2">mitad al arrancar, mitad al entregar</div>
-      </div>
-      <div class="border-t border-white/20 pt-8">
-        <div class="font-headline italic text-5xl text-surface-bright">soporte post-entrega</div>
-        <div class="font-label text-xs uppercase tracking-widest text-surface-bright/50 mt-2">no quedás sola con algo que no sabés usar</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Marquee -->
-<div class="bg-primary text-surface-bright py-6 overflow-hidden select-none" aria-hidden="true">
-  <div class="marquee">
-    <div class="marquee-content flex items-center gap-12 text-[0.75rem] uppercase tracking-[0.3em] font-label">
-      <span>páginas web · textos incluidos · pago en 2 partes · toda Argentina · soporte incluido · entrega en días</span>
-      <span>páginas web · textos incluidos · pago en 2 partes · toda Argentina · soporte incluido · entrega en días</span>
-      <span>páginas web · textos incluidos · pago en 2 partes · toda Argentina · soporte incluido · entrega en días</span>
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════
-     DOLOR — sección nueva, conexión emocional
-     ═══════════════════════════════════════════ -->
-<section class="py-24 px-8 md:px-24 bg-surface" aria-label="Para quién es esto">
-  <div class="max-w-3xl">
-    <span class="font-label text-[0.75rem] uppercase tracking-[0.2em] text-tertiary/60">¿te suena familiar?</span>
-    <div class="mt-8 space-y-8">
-      <p class="font-headline text-3xl md:text-4xl italic font-bold leading-tight">
-        "me da vergüenza mandar el link cuando alguien me pide la web."
-      </p>
-      <p class="font-headline text-3xl md:text-4xl italic font-bold leading-tight opacity-60">
-        "respondo las mismas preguntas por mensaje todos los días."
-      </p>
-      <p class="font-headline text-3xl md:text-4xl italic font-bold leading-tight opacity-30">
-        "quiero cobrar más, pero siento que mi presencia online no acompaña ese precio."
-      </p>
-    </div>
-    <div class="mt-12 border-t border-outline-variant/20 pt-10">
-      <p class="font-body text-lg opacity-70 max-w-xl leading-relaxed">
-        eso tiene solución. una página bien hecha lo resuelve — y no tarda meses ni cuesta una fortuna.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
-     PROYECTOS — casos ficticios
-     ═══════════════════════════════════════════ -->
-<section class="py-32 px-8 md:px-24 bg-surface-container-low" id="proyectos" aria-labelledby="proyectos-title">
-  <div class="mb-20">
-    <span class="font-label text-[0.75rem] uppercase tracking-[0.2em] text-tertiary">Proyectos</span>
-    <h2 id="proyectos-title" class="font-headline text-5xl italic font-bold mt-4">trabajos recientes</h2>
-  </div>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-0">
-
-    <article class="group bg-surface-container border border-outline-variant/10 hover:bg-primary transition-all duration-700 p-12">
-      <div class="font-headline text-8xl italic opacity-10 group-hover:opacity-5 text-primary group-hover:text-surface-bright mb-6 transition-all">01</div>
-      <div class="font-label text-[0.65rem] uppercase tracking-widest text-tertiary group-hover:text-surface-bright/50 mb-2 transition-colors">Estética · CABA</div>
-      <h3 class="font-headline text-3xl italic font-bold text-primary group-hover:text-surface-bright mb-1 transition-colors">Sofía Marenzi<br/>Cosmetología</h3>
-      <div class="font-label text-[0.7rem] uppercase tracking-widest opacity-40 group-hover:text-surface-bright mb-6 transition-colors text-primary">profesional independiente</div>
-      <div class="flex flex-wrap gap-2 mb-6">
-        <span class="font-label text-[0.6rem] uppercase tracking-widest border border-outline-variant/30 group-hover:border-surface-bright/20 px-2 py-1 text-primary group-hover:text-surface-bright opacity-60 transition-all">landing page</span>
-        <span class="font-label text-[0.6rem] uppercase tracking-widest border border-outline-variant/30 group-hover:border-surface-bright/20 px-2 py-1 text-primary group-hover:text-surface-bright opacity-60 transition-all">turnos</span>
-        <span class="font-label text-[0.6rem] uppercase tracking-widest border border-outline-variant/30 group-hover:border-surface-bright/20 px-2 py-1 text-primary group-hover:text-surface-bright opacity-60 transition-all">whatsapp</span>
-      </div>
-      <p class="font-body text-sm opacity-60 group-hover:text-surface-bright/70 group-hover:opacity-100 leading-relaxed mb-8 transition-all">Sofía atendía por DM pero los clientes tardaban en confirmar. Armamos una página con sus servicios, precios y botón directo para agendar. En la primera semana recibió 4 consultas nuevas.</p>
-      <div class="border-t border-outline-variant/20 group-hover:border-surface-bright/20 pt-5 flex justify-between items-center transition-colors">
-        <span class="font-label text-[0.65rem] uppercase tracking-widest opacity-40 group-hover:text-surface-bright transition-colors text-primary">la web que cierra ventas</span>
-        <span class="font-headline italic text-xl text-primary group-hover:text-surface-bright transition-all group-hover:translate-x-1 group-hover:-translate-y-1 inline-block">→</span>
-      </div>
-    </article>
-
-    <article class="group bg-surface-container-high border border-outline-variant/10 hover:bg-primary transition-all duration-700 p-12">
-      <div class="font-headline text-8xl italic opacity-10 group-hover:opacity-5 text-primary group-hover:text-surface-bright mb-6 transition-all">02</div>
-      <div class="font-label text-[0.65rem] uppercase tracking-widest text-tertiary group-hover:text-surface-bright/50 mb-2 transition-colors">Indumentaria · Córdoba</div>
-      <h3 class="font-headline text-3xl italic font-bold text-primary group-hover:text-surface-bright mb-1 transition-colors">Raíces<br/>Ropa de autor</h3>
-      <div class="font-label text-[0.7rem] uppercase tracking-widest opacity-40 group-hover:text-surface-bright mb-6 transition-colors text-primary">emprendimiento de moda</div>
-      <div class="flex flex-wrap gap-2 mb-6">
-        <span class="font-label text-[0.6rem] uppercase tracking-widest border border-outline-variant/30 group-hover:border-surface-bright/20 px-2 py-1 text-primary group-hover:text-surface-bright opacity-60 transition-all">catálogo visual</span>
-        <span class="font-label text-[0.6rem] uppercase tracking-widest border border-outline-variant/30 group-hover:border-surface-bright/20 px-2 py-1 text-primary group-hover:text-surface-bright opacity-60 transition-all">historia de marca</span>
-        <span class="font-label text-[0.6rem] uppercase tracking-widest border border-outline-variant/30 group-hover:border-surface-bright/20 px-2 py-1 text-primary group-hover:text-surface-bright opacity-60 transition-all">contacto</span>
-      </div>
-      <p class="font-body text-sm opacity-60 group-hover:text-surface-bright/70 group-hover:opacity-100 leading-relaxed mb-8 transition-all">Tenían la ropa, tenían las fotos, pero no tenían dónde mostrar todo junto. La web les dio un lugar propio para contar quiénes son y qué hacen, más allá de las redes.</p>
-      <div class="border-t border-outline-variant/20 group-hover:border-surface-bright/20 pt-5 flex justify-between items-center transition-colors">
-        <span class="font-label text-[0.65rem] uppercase tracking-widest opacity-40 group-hover:text-surface-bright transition-colors text-primary">punto de partida</span>
-        <span class="font-headline italic text-xl text-primary group-hover:text-surface-bright transition-all group-hover:translate-x-1 group-hover:-translate-y-1 inline-block">→</span>
-      </div>
-    </article>
-
-    <article class="group bg-surface-container-highest border border-outline-variant/10 hover:bg-primary transition-all duration-700 p-12">
-      <div class="font-headline text-8xl italic opacity-10 group-hover:opacity-5 text-primary group-hover:text-surface-bright mb-6 transition-all">03</div>
-      <div class="font-label text-[0.65rem] uppercase tracking-widest text-tertiary group-hover:text-surface-bright/50 mb-2 transition-colors">Contaduría · Resistencia</div>
-      <h3 class="font-headline text-3xl italic font-bold text-primary group-hover:text-surface-bright mb-1 transition-colors">Estudio Peralta<br/>& Asociados</h3>
-      <div class="font-label text-[0.7rem] uppercase tracking-widest opacity-40 group-hover:text-surface-bright mb-6 transition-colors text-primary">profesionales independientes</div>
-      <div class="flex flex-wrap gap-2 mb-6">
-        <span class="font-label text-[0.6rem] uppercase tracking-widest border border-outline-variant/30 group-hover:border-surface-bright/20 px-2 py-1 text-primary group-hover:text-surface-bright opacity-60 transition-all">web completa</span>
-        <span class="font-label text-[0.6rem] uppercase tracking-widest border border-outline-variant/30 group-hover:border-surface-bright/20 px-2 py-1 text-primary group-hover:text-surface-bright opacity-60 transition-all">blog</span>
-        <span class="font-label text-[0.6rem] uppercase tracking-widest border border-outline-variant/30 group-hover:border-surface-bright/20 px-2 py-1 text-primary group-hover:text-surface-bright opacity-60 transition-all">posicionamiento</span>
-      </div>
-      <p class="font-body text-sm opacity-60 group-hover:text-surface-bright/70 group-hover:opacity-100 leading-relaxed mb-8 transition-all">Dos contadores que querían dejar de depender del boca en boca. Hicimos una web completa con blog para que empiecen a aparecer cuando alguien los busca en la ciudad.</p>
-      <div class="border-t border-outline-variant/20 group-hover:border-surface-bright/20 pt-5 flex justify-between items-center transition-colors">
-        <span class="font-label text-[0.65rem] uppercase tracking-widest opacity-40 group-hover:text-surface-bright transition-colors text-primary">presencia completa</span>
-        <span class="font-headline italic text-xl text-primary group-hover:text-surface-bright transition-all group-hover:translate-x-1 group-hover:-translate-y-1 inline-block">→</span>
-      </div>
-    </article>
-
-  </div>
-  <div class="mt-12 border-l-2 border-outline-variant/20 pl-8">
-    <p class="font-headline italic text-base opacity-30">ejemplos de cómo trabajo con distintos tipos de negocio</p>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
-     SERVICIOS — nombres y precios actualizados
-     ═══════════════════════════════════════════ -->
-<section class="py-32 px-8 md:px-24 bg-surface" id="servicios" aria-labelledby="servicios-title">
-  <div class="mb-20 text-center md:text-left">
-    <span class="font-label text-[0.75rem] uppercase tracking-[0.2em] text-tertiary">Planes</span>
-    <h2 id="servicios-title" class="font-headline text-5xl italic font-bold mt-4">lo que ofrezco</h2>
-    <p class="font-body text-sm opacity-50 mt-4 max-w-lg">todos los planes incluyen textos, adaptación a celular y soporte después de la entrega. el pago es en dos partes.</p>
-  </div>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-0">
-
-    <!-- Plan 01 -->
-    <article class="group bg-surface-container p-12 border border-outline-variant/10 hover:bg-primary transition-all duration-700">
-      <div class="font-label text-[0.75rem] uppercase tracking-widest text-tertiary group-hover:text-surface-bright/60 mb-6 transition-colors">Plan 01 · 5 días hábiles</div>
-      <h3 class="font-headline text-4xl italic mb-3 group-hover:text-white transition-colors">Punto de<br/>partida</h3>
-      <p class="font-body text-sm opacity-50 group-hover:opacity-60 group-hover:text-surface-bright mb-2 transition-all leading-relaxed">para el que necesita existir online ya.</p>
-      <div class="font-label text-2xl mb-8 mt-6 group-hover:text-surface-bright transition-colors">$180.000 ARS</div>
-      <ul class="font-body text-sm space-y-4 opacity-70 group-hover:opacity-100 group-hover:text-surface-bright/80 transition-all mb-8">
-        <li>— una página con todo lo esencial</li>
-        <li>— textos incluidos (no escribís nada)</li>
-        <li>— botón de contacto directo</li>
-        <li>— adaptada a celular</li>
-        <li>— dominio incluido el primer año</li>
-        <li>— video explicativo de uso</li>
-      </ul>
-      <a href="https://wa.me/5493625142700" target="_blank" rel="noopener noreferrer"
-         class="inline-block w-full text-center py-3 border border-primary/20 group-hover:border-surface-bright/30 font-label text-[0.75rem] uppercase tracking-widest text-primary group-hover:text-surface-bright transition-all duration-500">
-        consultar →
-      </a>
-    </article>
-
-    <!-- Plan 02 — más elegido -->
-    <article class="group bg-primary p-12 border border-outline-variant/10 transition-all duration-700 relative">
-      <div class="absolute top-0 right-0 bg-surface-bright/10 px-4 py-2">
-        <span class="font-label text-[0.6rem] uppercase tracking-widest text-surface-bright/70">más elegido</span>
-      </div>
-      <div class="font-label text-[0.75rem] uppercase tracking-widest text-surface-bright/50 mb-6">Plan 02 · 8 días hábiles</div>
-      <h3 class="font-headline text-4xl italic mb-3 text-surface-bright">La web que<br/>cierra ventas</h3>
-      <p class="font-body text-sm text-surface-bright/60 mb-2 leading-relaxed">para el que ya vende pero no tiene dónde mandar a la gente.</p>
-      <div class="font-label text-2xl mb-8 mt-6 text-surface-bright">$320.000 ARS</div>
-      <ul class="font-body text-sm space-y-4 text-surface-bright/70 mb-8">
-        <li>— web de hasta 5 secciones</li>
-        <li>— textos incluidos y trabajados</li>
-        <li>— preguntas frecuentes basadas en tus DMs reales</li>
-        <li>— formulario + botón WhatsApp</li>
-        <li>— adaptada a celular</li>
-        <li>— dominio incluido el primer año</li>
-        <li>— sesión de entrega en vivo (45 min)</li>
-        <li>— 15 días de soporte post-entrega</li>
-        <li>— 1 ronda de revisiones</li>
-      </ul>
-      <a href="https://wa.me/5493625142700" target="_blank" rel="noopener noreferrer"
-         class="inline-block w-full text-center py-3 bg-surface-bright font-label text-[0.75rem] uppercase tracking-widest text-primary hover:bg-tertiary-fixed transition-all duration-500">
-        consultar →
-      </a>
-    </article>
-
-    <!-- Plan 03 -->
-    <article class="group bg-surface-container-highest p-12 border border-outline-variant/10 hover:bg-primary transition-all duration-700">
-      <div class="font-label text-[0.75rem] uppercase tracking-widest text-tertiary group-hover:text-surface-bright/60 mb-6 transition-colors">Plan 03 · 14 días hábiles</div>
-      <h3 class="font-headline text-4xl italic mb-3 group-hover:text-white transition-colors">Presencia<br/>completa</h3>
-      <p class="font-body text-sm opacity-50 group-hover:opacity-60 group-hover:text-surface-bright mb-2 transition-all leading-relaxed">para el que quiere construir algo que dure más allá de las redes.</p>
-      <div class="font-label text-2xl mb-8 mt-6 group-hover:text-surface-bright transition-colors">$520.000 ARS</div>
-      <ul class="font-body text-sm space-y-4 opacity-70 group-hover:opacity-100 group-hover:text-surface-bright/80 transition-all mb-8">
-        <li>— web completa de hasta 8 secciones</li>
-        <li>— blog o sección de novedades</li>
-        <li>— posicionamiento básico en Google</li>
-        <li>— Google Analytics configurado</li>
-        <li>— textos + estrategia de contenido básica</li>
-        <li>— 2 rondas de revisiones</li>
-        <li>— 30 días de soporte post-entrega</li>
-        <li>— guía de uso escrita para no técnicos</li>
-      </ul>
-      <a href="https://wa.me/5493625142700" target="_blank" rel="noopener noreferrer"
-         class="inline-block w-full text-center py-3 border border-primary/20 group-hover:border-surface-bright/30 font-label text-[0.75rem] uppercase tracking-widest text-primary group-hover:text-surface-bright transition-all duration-500">
-        consultar →
-      </a>
-    </article>
-
-  </div>
-
-  <!-- Servicios adicionales -->
-  <div class="mt-16 border-t border-outline-variant/20 pt-12">
-    <span class="font-label text-[0.75rem] uppercase tracking-[0.2em] text-tertiary/60">servicios adicionales</span>
-    <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-8">
-      <div>
-        <div class="font-label text-[0.7rem] uppercase tracking-widest opacity-40 mb-1">mantenimiento</div>
-        <div class="font-headline italic text-xl">$35.000 / mes</div>
-      </div>
-      <div>
-        <div class="font-label text-[0.7rem] uppercase tracking-widest opacity-40 mb-1">página extra</div>
-        <div class="font-headline italic text-xl">$45.000 c/u</div>
-      </div>
-      <div>
-        <div class="font-label text-[0.7rem] uppercase tracking-widest opacity-40 mb-1">hosting año 2+</div>
-        <div class="font-headline italic text-xl">$25.000 / año</div>
-      </div>
-      <div>
-        <div class="font-label text-[0.7rem] uppercase tracking-widest opacity-40 mb-1">consultoría</div>
-        <div class="font-headline italic text-xl">$25.000 / hora</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- How it Works -->
-<section class="bg-primary py-32 px-8 md:px-24 text-surface-bright" id="proceso" aria-labelledby="proceso-title">
-  <div class="mb-24 flex flex-col md:flex-row md:items-end justify-between">
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-wrap">
     <div>
-      <span class="font-label text-[0.75rem] uppercase tracking-[0.2em] opacity-60">El proceso</span>
-      <h2 id="proceso-title" class="font-headline text-6xl italic font-bold mt-4">cómo trabajamos</h2>
+      <p class="hero-eyebrow reveal">nadiaweb_ · diseño y desarrollo · argentina</p>
+      <h1 class="hero-h1 reveal d1">
+        Tu negocio existe.<br>
+        <em>Que online también<br>se entienda.</em>
+      </h1>
+      <p class="hero-sub reveal d2">
+        Hago páginas web para emprendedores que ya venden pero no tienen dónde mandar a la gente. Yo escribo los textos, programo y entrego. Vos no hacés nada.
+      </p>
+      <div class="hero-actions reveal d3">
+        <a class="btn-rojo" href="https://wa.me/5493624000000" target="_blank" rel="noopener">Escribime por WhatsApp</a>
+        <a class="btn-ghost" href="#services">Ver servicios →</a>
+      </div>
     </div>
-    <div class="mt-8 md:mt-0 max-w-sm opacity-60 font-body text-sm leading-relaxed">
-      sin vueltas y sin sorpresas. sabés en todo momento en qué etapa estamos.
+    <div class="hero-card reveal d4">
+      <div class="hero-card-label">Precios</div>
+      <div class="hero-card-row">
+        <span class="hcr-name">Landing page</span>
+        <span class="hcr-price">USD 220</span>
+      </div>
+      <div class="hero-card-row">
+        <span class="hcr-name">Web institucional</span>
+        <span class="hcr-price">USD 420</span>
+      </div>
+      <div class="hero-card-row">
+        <span class="hcr-name">Tienda online</span>
+        <span class="hcr-price">USD 680</span>
+      </div>
+      <p class="hero-card-note">Pagás en pesos al tipo de cambio del día. 50% al arrancar, 50% al entregar.</p>
     </div>
   </div>
-  <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
-    <div class="relative">
-      <span class="font-headline text-8xl italic opacity-10 absolute -top-12 -left-4" aria-hidden="true">01</span>
-      <div class="relative pt-8 border-t border-white/20">
-        <h3 class="font-label uppercase tracking-widest text-sm mb-4">me escribís</h3>
-        <p class="font-body text-xs opacity-60 leading-relaxed">por WhatsApp. me contás de tu negocio y vemos qué plan te conviene. sin compromiso.</p>
+  <div class="hero-bg-num" aria-hidden="true">nw_</div>
+</section>
+
+<!-- PROBLEM -->
+<section id="problem" class="section">
+  <div class="section-inner">
+    <span class="label reveal">Por qué importa</span>
+    <h2 class="h2 reveal d1">Tu web es la primera<br><em>impresión que no controlás.</em></h2>
+    <p class="lead reveal d2">Si alguien te busca y lo que encuentra no está a la altura, ya perdiste esa venta. Sin saberlo.</p>
+    <div class="problem-grid">
+      <div class="problem-card reveal d1">
+        <div class="prob-accent"></div>
+        <span class="prob-num">01</span>
+        <p class="prob-quote">"El link que mando no genera confianza."</p>
+        <p class="prob-note">Tu negocio funciona, tu trabajo es bueno. Pero lo que la gente ve online no lo refleja. Esa brecha te cuesta clientes todos los días.</p>
       </div>
-    </div>
-    <div class="relative">
-      <span class="font-headline text-8xl italic opacity-10 absolute -top-12 -left-4" aria-hidden="true">02</span>
-      <div class="relative pt-8 border-t border-white/20">
-        <h3 class="font-label uppercase tracking-widest text-sm mb-4">llamada inicial</h3>
-        <p class="font-body text-xs opacity-60 leading-relaxed">hablamos 30 minutos. entiendo tu negocio, tu cliente, qué necesitan ver para contactarte.</p>
+      <div class="problem-card reveal d2">
+        <div class="prob-accent"></div>
+        <span class="prob-num">02</span>
+        <p class="prob-quote">"Pierdo tiempo respondiendo siempre lo mismo."</p>
+        <p class="prob-note">Precio, horario, cómo funciona. Todo eso puede estar en tu web y ahorrarte horas de WhatsApp por semana.</p>
       </div>
-    </div>
-    <div class="relative">
-      <span class="font-headline text-8xl italic opacity-10 absolute -top-12 -left-4" aria-hidden="true">03</span>
-      <div class="relative pt-8 border-t border-white/20">
-        <h3 class="font-label uppercase tracking-widest text-sm mb-4">diseño y textos</h3>
-        <p class="font-body text-xs opacity-60 leading-relaxed">trabajo en tu web y te muestro el avance. los textos los escribo yo basándome en la llamada.</p>
-      </div>
-    </div>
-    <div class="relative">
-      <span class="font-headline text-8xl italic opacity-10 absolute -top-12 -left-4" aria-hidden="true">04</span>
-      <div class="relative pt-8 border-t border-white/20">
-        <h3 class="font-label uppercase tracking-widest text-sm mb-4">entrega en vivo</h3>
-        <p class="font-body text-xs opacity-60 leading-relaxed">te explico todo en vivo, practicamos juntas y me quedás teniendo por WhatsApp si surge algo.</p>
+      <div class="problem-card reveal d3">
+        <div class="prob-accent"></div>
+        <span class="prob-num">03</span>
+        <p class="prob-quote">"No parezco profesional online."</p>
+        <p class="prob-note">La gente te busca en Google, abre el link y cierra. No porque tu servicio sea malo — sino porque la primera impresión no acompaña.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-     PARA QUIÉN — reescrito con dolores reales
-     ═══════════════════════════════════════════ -->
-<section class="py-32 px-8 md:px-24 bg-surface grid grid-cols-1 md:grid-cols-2 gap-16 items-center" aria-labelledby="paraquien-title">
-  <div>
-    <h2 id="paraquien-title" class="font-headline text-5xl italic font-bold mb-12">¿esto<br/>es para vos?</h2>
-    <ul class="space-y-10">
-      <li class="flex items-start gap-4 border-t border-outline-variant/20 pt-8">
-        <div>
-          <h3 class="font-label uppercase text-[0.8rem] tracking-widest mb-2">ya vendés, pero online no se entiende</h3>
-          <p class="font-body text-sm opacity-60 leading-relaxed">tu negocio funciona. tus clientes te recomiendan. pero si alguien te busca en internet, no encuentra nada que lo convenza.</p>
-        </div>
-      </li>
-      <li class="flex items-start gap-4 border-t border-outline-variant/20 pt-8">
-        <div>
-          <h3 class="font-label uppercase text-[0.8rem] tracking-widest mb-2">respondés siempre las mismas preguntas</h3>
-          <p class="font-body text-sm opacity-60 leading-relaxed">¿cuánto sale? ¿cómo funciona? ¿cómo te contacto? esa información puede estar en tu web, disponible las 24 horas.</p>
-        </div>
-      </li>
-      <li class="flex items-start gap-4 border-t border-outline-variant/20 pt-8">
-        <div>
-          <h3 class="font-label uppercase text-[0.8rem] tracking-widest mb-2">querés cobrar más pero algo no cierra</h3>
-          <p class="font-body text-sm opacity-60 leading-relaxed">la presencia online acompaña el precio que cobrás. una web bien hecha dice "este negocio es serio" antes de que digas una sola palabra.</p>
-        </div>
-      </li>
-    </ul>
+<!-- SERVICES -->
+<section id="services" class="section">
+  <div class="section-inner">
+    <span class="label reveal">Servicios</span>
+    <h2 class="h2 reveal d1">Tres webs.<br><em>Un objetivo.</em></h2>
+    <p class="lead reveal d2">No son niveles de calidad. Cada una tiene exactamente lo que necesita para funcionar.</p>
+    <div class="services-grid">
+
+      <div class="svc-card reveal d1">
+        <span class="svc-num">01</span>
+        <div class="svc-name">Landing<br>page</div>
+        <div class="svc-price-usd">USD 220</div>
+        <div class="svc-price-ars">≈ $270.000 · pesos al cambio</div>
+        <div class="svc-line"></div>
+        <ul class="svc-list">
+          <li>1 página de conversión</li>
+          <li>Copy incluido</li>
+          <li>Botón WhatsApp directo</li>
+          <li>Mobile + desktop</li>
+        </ul>
+        <div class="svc-delivery">Entrega en 5 días hábiles</div>
+      </div>
+
+      <div class="svc-card featured reveal d2">
+        <div class="svc-tag">Más elegido</div>
+        <span class="svc-num">02</span>
+        <div class="svc-name">Web<br>institucional</div>
+        <div class="svc-price-usd">USD 420</div>
+        <div class="svc-price-ars">≈ $515.000 · pesos al cambio</div>
+        <div class="svc-line"></div>
+        <ul class="svc-list">
+          <li>Hasta 6 secciones</li>
+          <li>Inicio, servicios, portfolio, contacto</li>
+          <li>Copy incluido</li>
+          <li>Formulario + WhatsApp</li>
+          <li>Mobile + desktop</li>
+        </ul>
+        <div class="svc-delivery">Entrega en 8 días hábiles</div>
+      </div>
+
+      <div class="svc-card reveal d3">
+        <span class="svc-num">03</span>
+        <div class="svc-name">Tienda<br>online</div>
+        <div class="svc-price-usd">USD 680</div>
+        <div class="svc-price-ars">≈ $835.000 · pesos al cambio</div>
+        <div class="svc-line"></div>
+        <ul class="svc-list">
+          <li>Catálogo de productos</li>
+          <li>Carrito de compras</li>
+          <li>MercadoPago integrado</li>
+          <li>Copy incluido</li>
+          <li>Mobile + desktop</li>
+        </ul>
+        <div class="svc-delivery">Entrega en 14 días hábiles</div>
+      </div>
+
+    </div>
+    <div class="pricing-note reveal">
+      <strong>Sobre los precios:</strong> Se expresan en dólares para que no pierdan vigencia con la inflación. El pago se hace en pesos argentinos al tipo de cambio del día que acordamos. 50% al arrancar, 50% al entregar.
+    </div>
   </div>
-  <div class="bg-primary aspect-square flex flex-col justify-center items-center text-center p-12 text-surface-bright relative overflow-hidden">
-    <div class="relative z-10">
-      <div class="font-headline text-4xl italic mb-4">100% remoto</div>
-      <div class="font-label text-[0.75rem] uppercase tracking-[0.3em] opacity-60">toda Argentina</div>
-      <div class="mt-10 border-t border-white/20 pt-10">
-        <p class="font-body text-xs opacity-50 leading-relaxed">trabajo desde Resistencia, Chaco<br/>para emprendedores de todo el país.</p>
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="section">
+  <div class="section-inner">
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;">
+      <div>
+        <span class="label reveal">El proceso</span>
+        <h2 class="h2 reveal d1">3 pasos.<br><em>Sin reuniones eternas.</em></h2>
+        <p class="lead reveal d2" style="margin-bottom: 0;">Diseñado para que vos no tengás que hacer nada salvo llenar un formulario y revisar el resultado.</p>
+      </div>
+      <div class="process-list reveal d2">
+        <div class="process-item">
+          <div class="pi-num">01</div>
+          <div>
+            <div class="pi-day">Día 1</div>
+            <div class="pi-title">Me contás de tu negocio</div>
+            <p class="pi-desc">Un formulario corto — 10 minutos. Con eso tengo todo lo que necesito. No hay llamada previa, no hay reunión de descubrimiento.</p>
+          </div>
+        </div>
+        <div class="process-item">
+          <div class="pi-num">02</div>
+          <div>
+            <div class="pi-day">Días 2 al 6</div>
+            <div class="pi-title">Yo armo todo</div>
+            <p class="pi-desc">Escribo los textos, diseño y programo. Vos no hacés nada. Si necesito confirmar algo, te mando un mensaje corto.</p>
+          </div>
+        </div>
+        <div class="process-item">
+          <div class="pi-num">03</div>
+          <div>
+            <div class="pi-day">Día 7</div>
+            <div class="pi-title">Revisás y lanzamos</div>
+            <p class="pi-desc">Una ronda de ajustes. Publicamos. Te entrego acceso propio a todo. La web es tuya.</p>
+          </div>
+        </div>
+        <div class="process-note">
+          <strong>Después del lanzamiento:</strong> 7 días de soporte incluido. Mantenimiento mensual opcional <strong>USD 40/mes</strong>.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="section-inner">
+    <div class="about-inner">
+      <span class="about-eyebrow reveal">Sobre mí</span>
+      <h2 class="about-h2 reveal d1">Hola, soy Nadia.</h2>
+      <p class="about-p reveal d2">
+        Soy diseñadora y desarrolladora web freelance, basada en Resistencia, Chaco. Trabajo con emprendedores y pymes argentinas que necesitan una web que funcione de verdad.
+      </p>
+      <p class="about-p reveal d3">
+        <em>Programo el código yo misma, sin constructores drag & drop.</em> Escribo los textos con IA y estrategia de conversión. El cliente llega, completa un formulario y en una semana tiene su web.
+      </p>
+      <p class="about-p reveal d4">
+        No trabajo con grandes empresas ni prometo cosas que no puedo cumplir. Si tu objetivo es conseguir más clientes o que la gente entienda qué hacés, podemos trabajar juntos.
+      </p>
+      <div class="about-rule reveal d4"></div>
+      <div class="about-details reveal d5">
+        <div class="about-detail-item">
+          <div class="adi-label">Ubicación</div>
+          <div class="adi-value">Resistencia, Chaco</div>
+        </div>
+        <div class="about-detail-item">
+          <div class="adi-label">Especialidad</div>
+          <div class="adi-value">Web para pymes argentinas</div>
+        </div>
+        <div class="about-detail-item">
+          <div class="adi-label">Desde</div>
+          <div class="adi-value">2023</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="py-32 px-8 md:px-24 bg-surface-container-low" id="faq" aria-labelledby="faq-title">
-  <div class="mb-20 text-center md:text-left">
-    <span class="font-label text-[0.75rem] uppercase tracking-[0.2em] text-tertiary">Preguntas frecuentes</span>
-    <h2 id="faq-title" class="font-headline text-5xl italic font-bold mt-4">lo que siempre preguntan</h2>
-  </div>
-  <div class="max-w-3xl grid grid-cols-1 gap-0">
+<section id="faq" class="section">
+  <div class="section-inner">
+    <span class="label reveal">Preguntas frecuentes</span>
+    <h2 class="h2 reveal d1">Lo que<br><em>siempre preguntan.</em></h2>
+    <div class="faq-wrap" style="margin-top: 48px;">
 
-    <details class="border-t border-outline-variant/20 py-6 group" open>
-      <summary class="font-label text-sm uppercase tracking-widest cursor-pointer list-none flex justify-between items-center">
-        ¿cuánto tarda en estar lista mi web?
-        <span class="font-headline italic text-2xl transition-transform group-open:rotate-45">+</span>
-      </summary>
-      <p class="font-body text-sm opacity-60 mt-4 leading-relaxed">depende del plan: punto de partida 5 días hábiles, la web que cierra ventas 8 días, presencia completa 14 días. el proceso arranca cuando confirmás y hacés el primer pago.</p>
-    </details>
+      <div class="faq-item reveal d1">
+        <details>
+          <summary>¿Tengo que escribir los textos yo? <span class="faq-arrow" aria-hidden="true"></span></summary>
+          <p class="faq-answer">No. Los textos los escribo yo. Completás el formulario inicial con info básica de tu negocio y yo me encargo del resto. Es uno de los diferenciales principales de trabajar conmigo.</p>
+        </details>
+      </div>
 
-    <details class="border-t border-outline-variant/20 py-6 group">
-      <summary class="font-label text-sm uppercase tracking-widest cursor-pointer list-none flex justify-between items-center">
-        ¿cómo es el pago?
-        <span class="font-headline italic text-2xl transition-transform group-open:rotate-45">+</span>
-      </summary>
-      <p class="font-body text-sm opacity-60 mt-4 leading-relaxed">50% antes de empezar y 50% cuando te entrego el link funcionando. acepto transferencia bancaria y MercadoPago. el plan presencia completa tiene un esquema de 3 partes.</p>
-    </details>
+      <div class="faq-item reveal d1">
+        <details>
+          <summary>¿Los precios son en dólares o en pesos? <span class="faq-arrow" aria-hidden="true"></span></summary>
+          <p class="faq-answer">Los precios están en dólares como referencia de valor para que no pierdan vigencia con la inflación. El pago se hace en pesos al tipo de cambio del día que acordamos. 50% al arrancar, 50% al entregar.</p>
+        </details>
+      </div>
 
-    <details class="border-t border-outline-variant/20 py-6 group">
-      <summary class="font-label text-sm uppercase tracking-widest cursor-pointer list-none flex justify-between items-center">
-        ¿tengo que escribir los textos yo?
-        <span class="font-headline italic text-2xl transition-transform group-open:rotate-45">+</span>
-      </summary>
-      <p class="font-body text-sm opacity-60 mt-4 leading-relaxed">no. los textos los escribo yo basándome en la llamada inicial donde entiendo tu negocio. lo único que necesito de tu parte es contarme qué hacés, quiénes son tus clientes y qué te preguntan siempre.</p>
-    </details>
+      <div class="faq-item reveal d2">
+        <details>
+          <summary>¿Qué pasa con el dominio y el hosting? <span class="faq-arrow" aria-hidden="true"></span></summary>
+          <p class="faq-answer">No están incluidos en el precio, pero son económicos y te ayudo a contratarlos paso a paso. No necesitás saber nada técnico.</p>
+        </details>
+      </div>
 
-    <details class="border-t border-outline-variant/20 py-6 group">
-      <summary class="font-label text-sm uppercase tracking-widest cursor-pointer list-none flex justify-between items-center">
-        ¿puedo tocar la web yo después?
-        <span class="font-headline italic text-2xl transition-transform group-open:rotate-45">+</span>
-      </summary>
-      <p class="font-body text-sm opacity-60 mt-4 leading-relaxed">sí. te entrego con acceso propio y te explico todo en la sesión de entrega en vivo. podés cambiar textos, fotos y precios sin depender de mí. y si tenés dudas, me escribís por WhatsApp durante el período de soporte.</p>
-    </details>
+      <div class="faq-item reveal d2">
+        <details>
+          <summary>¿Puedo modificar la web después? <span class="faq-arrow" aria-hidden="true"></span></summary>
+          <p class="faq-answer">Sí. Te entrego acceso completo y te explico cómo manejarte con los cambios básicos. Si preferís que me encargue yo del mantenimiento, hay una opción mensual de USD 40.</p>
+        </details>
+      </div>
 
-    <details class="border-t border-outline-variant/20 py-6 group">
-      <summary class="font-label text-sm uppercase tracking-widest cursor-pointer list-none flex justify-between items-center">
-        ¿qué pasa si ya tuve una mala experiencia antes?
-        <span class="font-headline italic text-2xl transition-transform group-open:rotate-45">+</span>
-      </summary>
-      <p class="font-body text-sm opacity-60 mt-4 leading-relaxed">lo entiendo y pasa más seguido de lo que parece. por eso el proceso es transparente desde el principio: sabés el precio exacto antes de empezar, ves el avance durante el desarrollo y no te dejo sola cuando lo entrego.</p>
-    </details>
+      <div class="faq-item reveal d3">
+        <details>
+          <summary>¿Qué necesito tener listo para empezar? <span class="faq-arrow" aria-hidden="true"></span></summary>
+          <p class="faq-answer">Básicamente nada. Si tenés logo, mejor. Si no, te doy opciones. Fotos ayudan pero no son obligatorias. Con el formulario inicial ya tengo suficiente para arrancar.</p>
+        </details>
+      </div>
 
-    <details class="border-t border-t border-outline-variant/20 border-b border-b-outline-variant/20 py-6 group">
-      <summary class="font-label text-sm uppercase tracking-widest cursor-pointer list-none flex justify-between items-center">
-        ¿trabajás con negocios fuera de Argentina?
-        <span class="font-headline italic text-2xl transition-transform group-open:rotate-45">+</span>
-      </summary>
-      <p class="font-body text-sm opacity-60 mt-4 leading-relaxed">sí, todo es 100% remoto. trabajo con emprendedores por WhatsApp y videollamada.</p>
-    </details>
-
+    </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-     CTA — reescrito: dolor real, no genérico
-     ═══════════════════════════════════════════ -->
-<section class="bg-primary py-32 px-8 md:px-24 text-center" id="contacto" aria-labelledby="cta-title">
-  <div class="max-w-4xl mx-auto">
-    <h2 id="cta-title" class="font-headline text-5xl md:text-7xl italic font-bold text-surface-bright mb-8 leading-tight">
-      ¿todavía mandás<br/>el perfil cuando<br/>alguien te pide<br/>la web?
-    </h2>
-    <p class="font-body text-surface-bright/50 mb-16 text-lg max-w-xl mx-auto leading-relaxed">
-      escribime. en menos de 24 horas te cuento qué plan te conviene y cómo arrancamos.
-    </p>
-    <a class="inline-block px-16 py-6 bg-surface-bright text-primary font-label text-[0.875rem] uppercase tracking-widest hover:bg-tertiary-fixed transition-all duration-500"
-       href="https://wa.me/5493625142700"
-       target="_blank"
-       rel="noopener noreferrer"
-       aria-label="Contactar por WhatsApp">
-      escribime por WhatsApp →
+<!-- CTA FINAL -->
+<section id="cta">
+  <div class="cta-inner">
+    <span class="cta-label reveal">¿Arrancamos?</span>
+    <h2 class="cta-h2 reveal d1">Tu negocio ya existe.</h2>
+    <p class="cta-sub reveal d2">Que online también se entienda.</p>
+    <a class="btn-rojo reveal d3" href="https://wa.me/5493624000000" target="_blank" rel="noopener" style="font-size:0.7rem; padding:16px 40px;">
+      Escribime por WhatsApp
     </a>
-    <p class="font-body text-surface-bright/30 text-xs mt-8 uppercase tracking-widest">respondo en menos de 24 horas · toda argentina</p>
+    <p class="cta-note reveal d4">Sin formularios previos. Sin llamadas de descubrimiento. Solo escribime.</p>
   </div>
+  <div class="cta-bg" aria-hidden="true">nadiaweb_</div>
 </section>
 
-<!-- Footer -->
-<footer class="bg-surface-dim px-12 py-16 w-full flex flex-col md:flex-row justify-between items-start md:items-center">
-  <div>
-    <div class="text-3xl font-bold italic font-headline text-[#031b3e]">nw</div>
-    <p class="font-label text-[0.75rem] mt-2 opacity-40 uppercase tracking-widest">Nadia Web</p>
-    <p class="font-label text-[0.75rem] mt-4 opacity-30 uppercase tracking-widest">© 2025</p>
-  </div>
-  <nav class="mt-12 md:mt-0 flex flex-col md:items-end space-y-4" aria-label="Navegación pie de página">
-    <a class="font-body text-[0.875rem] tracking-wide text-primary opacity-80 hover:opacity-100 transition-opacity"
-       href="https://instagram.com/nadiaweb_"
-       target="_blank" rel="noopener noreferrer"
-       aria-label="Instagram de Nadia Web">
-      @nadiaweb_
-    </a>
-    <a class="font-body text-[0.875rem] tracking-wide text-primary opacity-80 hover:opacity-100 transition-opacity"
-       href="https://wa.me/5493625142700"
-       target="_blank" rel="noopener noreferrer"
-       aria-label="WhatsApp de Nadia Web">
-      WhatsApp
-    </a>
-    <p class="font-body text-[0.875rem] tracking-wide text-primary opacity-40">Resistencia, Chaco · Argentina</p>
-  </nav>
+<!-- FOOTER -->
+<footer>
+  <a class="footer-logo" href="#">nadiaweb_</a>
+  <ul class="footer-links">
+    <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+    <li><a href="https://wa.me/5493624000000" target="_blank" rel="noopener">WhatsApp</a></li>
+  </ul>
+  <span class="footer-copy">© 2025 nadiaweb_ · Resistencia, Argentina</span>
 </footer>
 
 <script>
-  const cursor = document.getElementById('cursor');
-  const interactives = document.querySelectorAll('a, button, details, summary');
-
-  document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
+// Scroll reveal
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
   });
+}, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  interactives.forEach(el => {
-    el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
-    el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
-  });
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
-    });
-  }, { threshold: 0.08 });
-
-  document.querySelectorAll('section, article').forEach(el => {
-    el.classList.add('fade-up');
-    observer.observe(el);
-  });
-
-  const menuBtn = document.getElementById('mobile-menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const menuClose = document.getElementById('mobile-menu-close');
-
-  menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.add('open');
-    menuBtn.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
-  });
-
-  const closeMenu = () => {
-    mobileMenu.classList.remove('open');
-    menuBtn.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  };
-
-  menuClose.addEventListener('click', closeMenu);
-  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+// Nav scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 50), { passive: true });
 </script>
 </body>
 </html>
