@@ -731,6 +731,7 @@ footer {
   .services-grid { gap: 16px; }
 }
 @media (max-width: 640px) {
+  .about-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
   .fab-wa { bottom: 20px; right: 20px; width: 54px; height: 54px; }
   .fab-wa svg { width: 28px; height: 28px; }
   .nav-links { display: none; }
@@ -758,7 +759,10 @@ footer {
 <section id="hero">
   <div class="hero-wrap">
     <div>
-      <p class="hero-eyebrow reveal">nadiaweb_ · diseño y desarrollo · argentina</p>
+      <p class="hero-eyebrow reveal">nadiaweb_ · diseño y desarrollo</p>
+      <div class="reveal d1" style="display:inline-block; font-family:var(--mono); font-size:0.6rem; letter-spacing:0.1em; color:rgba(254,249,240,0.6); background:rgba(255,255,255,0.06); padding:6px 14px; border-radius:100px; margin-bottom:24px; border:1px solid rgba(255,255,255,0.1);">
+        ✨ Trabajando con emprendedores de toda Argentina
+      </div>
       <h1 class="hero-h1 reveal d1">
         Tu negocio existe.<br>
         <em>Que online también<br>se entienda.</em>
@@ -785,19 +789,19 @@ footer {
     <div class="problem-grid">
       <div class="problem-card reveal d1">
         <div class="prob-accent"></div>
-        <span class="prob-num">01</span>
+        <span class="prob-num">///</span>
         <p class="prob-quote">"El link que mando no genera confianza."</p>
         <p class="prob-note">Tu negocio funciona, tu trabajo es bueno. Pero lo que la gente ve online no lo refleja. Esa brecha te cuesta clientes todos los días.</p>
       </div>
       <div class="problem-card reveal d2">
         <div class="prob-accent"></div>
-        <span class="prob-num">02</span>
+        <span class="prob-num">///</span>
         <p class="prob-quote">"Pierdo tiempo respondiendo siempre lo mismo."</p>
         <p class="prob-note">Precio, horario, cómo funciona. Todo eso puede estar en tu web y ahorrarte horas de WhatsApp por semana.</p>
       </div>
       <div class="problem-card reveal d3">
         <div class="prob-accent"></div>
-        <span class="prob-num">03</span>
+        <span class="prob-num">///</span>
         <p class="prob-quote">"No parezco profesional online."</p>
         <p class="prob-note">La gente te busca en Google, abre el link y cierra. No porque tu servicio sea malo — sino porque la primera impresión no acompaña.</p>
       </div>
@@ -820,10 +824,10 @@ footer {
         <div class="svc-price-ars">≈ $270.000 · pesos al cambio</div>
         <div class="svc-line"></div>
         <ul class="svc-list">
-          <li>1 página de conversión</li>
-          <li>Copy incluido</li>
-          <li>Botón WhatsApp directo</li>
-          <li>Mobile + desktop</li>
+          <li>1 página de <strong>conversión</strong></li>
+          <li><strong>Copy</strong> (textos) incluido</li>
+          <li>Botón <strong>WhatsApp</strong> directo</li>
+          <li><strong>Mobile</strong> + desktop</li>
         </ul>
         <div class="svc-delivery">Entrega en 5 días hábiles</div>
       </div>
@@ -832,15 +836,16 @@ footer {
         <div class="svc-tag">Más elegido</div>
         <span class="svc-num">02</span>
         <div class="svc-name">Web<br>institucional</div>
+        <p style="font-size:0.75rem; color:rgba(254,249,240,0.7); line-height:1.4; margin-bottom:16px;">Ideal para validar tu marca frente a empresas proveedoras y B2B.</p>
         <div class="svc-price-usd">USD 420</div>
         <div class="svc-price-ars">≈ $515.000 · pesos al cambio</div>
         <div class="svc-line"></div>
         <ul class="svc-list">
-          <li>Hasta 6 secciones</li>
+          <li>Hasta <strong>6 secciones</strong></li>
           <li>Inicio, servicios, portfolio, contacto</li>
-          <li>Copy incluido</li>
-          <li>Formulario + WhatsApp</li>
-          <li>Mobile + desktop</li>
+          <li><strong>Copy</strong> incluido</li>
+          <li><strong>Formulario</strong> + <strong>WhatsApp</strong></li>
+          <li><strong>Mobile</strong> + desktop</li>
         </ul>
         <div class="svc-delivery">Entrega en 8 días hábiles</div>
       </div>
@@ -848,15 +853,16 @@ footer {
       <div class="svc-card reveal d3">
         <span class="svc-num">03</span>
         <div class="svc-name">Tienda<br>online</div>
+        <p style="font-size:0.75rem; color:var(--azul-60); line-height:1.4; margin-bottom:16px;">Para vender productos físicos o digitales 24/7 en piloto automático.</p>
         <div class="svc-price-usd">USD 680</div>
         <div class="svc-price-ars">≈ $835.000 · pesos al cambio</div>
         <div class="svc-line"></div>
         <ul class="svc-list">
-          <li>Catálogo de productos</li>
-          <li>Carrito de compras</li>
-          <li>MercadoPago integrado</li>
-          <li>Copy incluido</li>
-          <li>Mobile + desktop</li>
+          <li><strong>Catálogo</strong> de productos</li>
+          <li><strong>Carrito</strong> de compras</li>
+          <li><strong>MercadoPago</strong> integrado</li>
+          <li><strong>Copy</strong> incluido</li>
+          <li><strong>Mobile</strong> + desktop</li>
         </ul>
         <div class="svc-delivery">Entrega en 14 días hábiles</div>
       </div>
@@ -913,31 +919,33 @@ footer {
 <!-- ABOUT -->
 <section id="about" class="section">
   <div class="section-inner">
-    <div class="about-inner">
-      <span class="about-eyebrow reveal">Sobre mí</span>
-      <h2 class="about-h2 reveal d1">Hola, soy Nadia.</h2>
-      <p class="about-p reveal d2">
-        Soy diseñadora y desarrolladora web freelance, basada en Resistencia, Chaco. Trabajo con emprendedores y pymes argentinas que necesitan una web que funcione de verdad.
-      </p>
-      <p class="about-p reveal d3">
-        <em>Programo el código yo misma, sin constructores drag & drop.</em> Escribo los textos con IA y estrategia de conversión. El cliente llega, completa un formulario y en una semana tiene su web.
-      </p>
-      <p class="about-p reveal d4">
-        No trabajo con grandes empresas ni prometo cosas que no puedo cumplir. Si tu objetivo es conseguir más clientes o que la gente entienda qué hacés, podemos trabajar juntos.
-      </p>
-      <div class="about-rule reveal d4"></div>
-      <div class="about-details reveal d5">
-        <div class="about-detail-item">
-          <div class="adi-label">Ubicación</div>
-          <div class="adi-value">Resistencia, Chaco</div>
-        </div>
-        <div class="about-detail-item">
-          <div class="adi-label">Especialidad</div>
-          <div class="adi-value">Web para pymes argentinas</div>
-        </div>
-        <div class="about-detail-item">
-          <div class="adi-label">Desde</div>
-          <div class="adi-value">2023</div>
+    <div class="about-grid" style="display:grid; grid-template-columns: 280px 1fr; gap: 60px; align-items: start;">
+      <div class="about-photo reveal d1" style="background:#0a2850; border-radius:4px; aspect-ratio:3/4; position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center;">
+        <span style="color:rgba(254,249,240,0.3); font-family:var(--mono); font-size:0.6rem; text-align:center; padding:20px; border:1px dashed rgba(254,249,240,0.2); width:calc(100% - 16px); height:calc(100% - 16px); display:flex; align-items:center; justify-content:center;">[Tu Foto Aquí]<br>Recomendado: Retrato profesional, sonriendo, fondo despejado.</span>
+      </div>
+      <div class="about-inner" style="max-width:100%;">
+        <span class="about-eyebrow reveal">Sobre mí</span>
+        <h2 class="about-h2 reveal d1">Hola, soy Nadia.</h2>
+        <p class="about-p reveal d2">
+          Soy diseñadora y desarrolladora web freelance basada en Chaco. Trabajo exclusivamente con emprendedores y PyMEs argentinas que necesitan una web que <strong>funcione de verdad y no sea solo un adorno.</strong>
+        </p>
+        <p class="about-p reveal d3">
+          <em>Programo el código yo misma, sin constructores drag & drop que alentan tu página.</em> Además, yo escribo los textos orientados a conversión. El cliente llega, completa un formulario y en una semana tiene su negocio luciendo impecable en internet. Si tu meta es dejar de perder ventas por una mala primera impresión, trabajemos juntos.
+        </p>
+        <div class="about-rule reveal d4"></div>
+        <div class="about-details reveal d4">
+          <div class="about-detail-item">
+            <div class="adi-label">Ubicación</div>
+            <div class="adi-value">Resistencia, Chaco</div>
+          </div>
+          <div class="about-detail-item">
+            <div class="adi-label">Especialidad</div>
+            <div class="adi-value">Webs para PyMEs</div>
+          </div>
+          <div class="about-detail-item">
+            <div class="adi-label">Desde</div>
+            <div class="adi-value">2023</div>
+          </div>
         </div>
       </div>
     </div>
@@ -1002,6 +1010,19 @@ footer {
     <p class="cta-note reveal d4">Escribime y hoy empezamos el boceto de tu nueva web. Sin compromiso.</p>
   </div>
   <div class="cta-bg" aria-hidden="true">nadiaweb_</div>
+</section>
+
+<!-- NEWSLETTER / LEAD MAGNET -->
+<section id="newsletter" style="background:var(--white); padding:80px var(--page-x); border-top:1px solid rgba(3,27,62,0.08);">
+  <div style="max-width:680px; margin:0 auto; text-align:center;">
+    <h3 class="reveal" style="font-family:var(--serif); font-size:1.8rem; font-weight:700; color:var(--azul); margin-bottom:12px;">¿Aún no estás para invertir hoy?</h3>
+    <p class="reveal d1" style="font-size:0.9rem; color:var(--azul-60); margin-bottom:32px; line-height:1.6;">Dejame tu email y te aviso cuando tenga cupos promocionales o nuevas guías gratuitas sobre cómo mejorar tu negocio online.</p>
+    <form class="reveal d2" action="https://formspree.io/f/xvgzwyre" method="POST" style="display:flex; gap:12px; max-width:480px; margin:0 auto; flex-wrap:wrap;">
+      <input type="email" name="email" placeholder="Tu mejor email" required style="flex:1; min-width:200px; padding:14px 20px; font-family:var(--sans); font-size:0.85rem; border:1px solid rgba(3,27,62,0.15); outline:none; transition:border-color 0.2s; background:var(--white); color:var(--azul);" onfocus="this.style.borderColor='var(--azul)'" onblur="this.style.borderColor='rgba(3,27,62,0.15)'">
+      <button type="submit" style="background:var(--azul); color:var(--white); font-family:var(--mono); font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; padding:15px 32px; border:none; cursor:pointer; transition:background 0.2s, transform 0.2s;" onmouseover="this.style.background='#0a2850'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='var(--azul)'; this.style.transform='none'">Avisame</button>
+    </form>
+    <p class="reveal d3" style="font-family:var(--mono); font-size:0.55rem; color:var(--azul-35); margin-top:16px; text-transform:uppercase; letter-spacing:0.1em;">Cero SPAM. Te podés dar de baja cuando quieras.</p>
+  </div>
 </section>
 
 <!-- FOOTER -->
