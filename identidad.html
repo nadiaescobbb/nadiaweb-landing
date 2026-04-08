@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>nadiaweb_ — Identidad de Marca</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Poppins:wght@300;400;500;600&display=swap');
+
+  :root {
+    --azul: #031b3e;
+    --beige: #fef9f0;
+    --beige2: #f0e8d8;
+    --rojo: #B83232;
+    --blanco: #ffffff;
+    --azul-mid: #1C3054;
+    --serif: 'Lora', Georgia, serif;
+    --sans: 'Poppins', system-ui, sans-serif;
+    --mono: 'Liberation Mono', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--beige);
+    color: var(--azul);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* ── NOISE TEXTURE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 9999;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 256px 256px;
+  }
+
+  /* ── PAGE LAYOUT ── */
+  .page {
+    width: 794px;
+    min-height: 1123px;
+    margin: 0 auto 40px;
+    position: relative;
+    overflow: hidden;
+    background: var(--beige);
+    box-shadow: 0 4px 40px rgba(3,27,62,0.12);
+  }
+
+  /* ── NOTEBOOK LINES ── */
+  .page-lines {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .page-lines::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      transparent,
+      transparent 31px,
+      rgba(3,27,62,0.06) 31px,
+      rgba(3,27,62,0.06) 32px
+    );
+    background-position: 0 60px;
+  }
+
+  /* ── RED MARGIN LINE ── */
+  .page-margin {
+    position: absolute;
+    left: 72px;
+    top: 0;
+    bottom: 0;
+    width: 1.5px;
+    background: rgba(184,50,50,0.25);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .page-content {
+    position: relative;
+    z-index: 2;
+    padding: 64px 64px 64px 96px;
+  }
+
+  /* ── COVER PAGE ── */
+  .cover {
+    background: var(--azul);
+    min-height: 1123px;
+  }
+  .cover .page-lines::after {
+    background-image: repeating-linear-gradient(
+      transparent,
+      transparent 31px,
+      rgba(254,249,240,0.04) 31px,
+      rgba(254,249,240,0.04) 32px
+    );
+  }
+  .cover .page-margin {
+    background: rgba(184,50,50,0.4);
+  }
+  .cover .page-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 1123px;
+    color: var(--beige);
+  }
+
+  .cover-eyebrow {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(254,249,240,0.4);
+    margin-bottom: 120px;
+  }
+
+  .cover-logo-mark {
+    font-family: var(--serif);
+    font-size: 120px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--beige);
+    letter-spacing: -4px;
+    margin-bottom: 4px;
+  }
+
+  .cover-logo-sub {
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    color: rgba(254,249,240,0.5);
+    margin-bottom: 64px;
+  }
+
+  .cover-title {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-style: italic;
+    font-weight: 400;
+    color: rgba(254,249,240,0.7);
+    max-width: 420px;
+    line-height: 1.4;
+    margin-bottom: 32px;
+  }
+
+  .cover-rule {
+    width: 48px;
+    height: 2px;
+    background: var(--rojo);
+    margin-bottom: 32px;
+  }
+
+  .cover-tagline {
+    font-family: var(--serif);
+    font-size: 16px;
+    font-style: italic;
+    color: var(--beige2);
+    max-width: 380px;
+    line-height: 1.6;
+  }
+
+  .cover-bottom {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 48px;
+  }
+
+  .cover-bottom-left {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: rgba(254,249,240,0.3);
+    text-transform: uppercase;
+    line-height: 1.8;
+  }
+
+  .cover-index {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: rgba(254,249,240,0.3);
+    letter-spacing: 0.08em;
+    text-align: right;
+    line-height: 2;
+  }
+
+  /* ── STICKY NOTE ── */
+  .sticky {
+    position: absolute;
+    padding: 16px 18px;
+    font-family: var(--sans);
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 500;
+    box-shadow: 2px 3px 12px rgba(3,27,62,0.15);
+    z-index: 10;
+    max-width: 160px;
+  }
+  .sticky-yellow { background: #f9e784; color: #3d2e00; transform: rotate(2.5deg); }
+  .sticky-blue { background: #b8d9f5; color: #0d2a4a; transform: rotate(-1.8deg); }
+  .sticky-pink { background: #f7c5d5; color: #4a0f22; transform: rotate(1.2deg); }
+  .sticky-green { background: #b8ead5; color: #0d3322; transform: rotate(-2.5deg); }
+
+  /* ── SECTION HEADER ── */
+  .section-num {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rojo);
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-family: var(--serif);
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -1px;
+    color: var(--azul);
+    margin-bottom: 8px;
+  }
+
+  .section-subtitle {
+    font-family: var(--serif);
+    font-size: 15px;
+    font-style: italic;
+    color: rgba(3,27,62,0.5);
+    margin-bottom: 40px;
+  }
+
+  .section-rule {
+    width: 100%;
+    height: 1px;
+    background: rgba(3,27,62,0.12);
+    margin-bottom: 40px;
+  }
+
+  /* ── BODY TEXT ── */
+  .body-text {
+    font-size: 14px;
+    line-height: 1.8;
+    color: rgba(3,27,62,0.8);
+    max-width: 560px;
+  }
+
+  /* ── HIGHLIGHT / ANNOTATION ── */
+  .annotation {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--rojo);
+    position: relative;
+  }
+
+  .underline-editorial {
+    text-decoration: underline;
+    text-decoration-color: var(--rojo);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+
+  .tachado {
+    text-decoration: line-through;
+    text-decoration-color: var(--rojo);
+    opacity: 0.5;
+  }
+
+  /* ── CALLOUT BLOCK ── */
+  .callout {
+    background: var(--blanco);
+    border-left: 3px solid var(--rojo);
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .callout-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rojo);
+    margin-bottom: 8px;
+  }
+
+  /* ── DIFERENCIAL LIST ── */
+  .diferencial-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .diferencial-list li {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(3,27,62,0.07);
+    font-size: 14px;
+  }
+
+  .diferencial-list li:last-child { border-bottom: none; }
+
+  .diferencial-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--rojo);
+    flex-shrink: 0;
+    margin-top: 8px;
+  }
+
+  /* ── GRID 2-COL ── */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin: 24px 0;
+  }
+
+  .grid-card {
+    background: var(--blanco);
+    padding: 24px;
+    border: 1px solid rgba(3,27,62,0.1);
+  }
+
+  .grid-card-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(3,27,62,0.4);
+    margin-bottom: 12px;
+  }
+
+  /* ── VOZ TABLA ── */
+  .voz-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 13px;
+  }
+
+  .voz-table th {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 10px 16px;
+    text-align: left;
+    border-bottom: 2px solid var(--azul);
+  }
+
+  .voz-table .col-si { background: var(--blanco); }
+  .voz-table .col-no { background: var(--beige2); }
+
+  .voz-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid rgba(3,27,62,0.07);
+    line-height: 1.5;
+    vertical-align: top;
+  }
+
+  .voz-table td.green-mark::before {
+    content: '✓ ';
+    color: #2a7a4b;
+    font-weight: 600;
+  }
+
+  .voz-table td.red-mark::before {
+    content: '× ';
+    color: var(--rojo);
+    font-weight: 600;
+  }
+
+  /* ── COLOR SWATCHES ── */
+  .palette-row {
+    display: flex;
+    gap: 0;
+    margin: 24px 0;
+    height: 80px;
+  }
+
+  .swatch {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 8px 10px;
+  }
+
+  .swatch-name {
+    font-family: var(--mono);
+    font-size: 8px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 2px;
+  }
+
+  .swatch-hex {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── TYPOGRAPHY SPECIMEN ── */
+  .type-specimen {
+    background: var(--blanco);
+    padding: 28px 28px;
+    margin: 20px 0;
+    border: 1px solid rgba(3,27,62,0.08);
+  }
+
+  .type-role {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(3,27,62,0.4);
+    margin-bottom: 8px;
+  }
+
+  /* ── SERVICES CARDS ── */
+  .service-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin: 28px 0;
+  }
+
+  .service-card {
+    border: 1px solid rgba(3,27,62,0.15);
+    padding: 24px 20px;
+    background: var(--blanco);
+    position: relative;
+  }
+
+  .service-card.featured {
+    background: var(--azul);
+    color: var(--beige);
+    border-color: var(--azul);
+  }
+
+  .service-card-tag {
+    font-family: var(--mono);
+    font-size: 8px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rojo);
+    margin-bottom: 12px;
+  }
+
+  .service-card.featured .service-card-tag {
+    color: rgba(254,249,240,0.5);
+  }
+
+  .service-card-name {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    line-height: 1.1;
+  }
+
+  .service-card-price-usd {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    color: var(--rojo);
+  }
+
+  .service-card.featured .service-card-price-usd {
+    color: #f9c06a;
+  }
+
+  .service-card-price-ars {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: rgba(3,27,62,0.4);
+    margin-bottom: 20px;
+  }
+
+  .service-card.featured .service-card-price-ars {
+    color: rgba(254,249,240,0.4);
+  }
+
+  .service-card-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(3,27,62,0.1);
+    margin-bottom: 16px;
+  }
+
+  .service-card.featured .service-card-divider {
+    background: rgba(254,249,240,0.15);
+  }
+
+  .service-card-items {
+    list-style: none;
+    font-size: 11.5px;
+    line-height: 1.9;
+    color: rgba(3,27,62,0.7);
+  }
+
+  .service-card.featured .service-card-items {
+    color: rgba(254,249,240,0.75);
+  }
+
+  .service-card-items li::before {
+    content: '— ';
+    color: var(--rojo);
+  }
+
+  .service-card.featured .service-card-items li::before {
+    color: #f9c06a;
+  }
+
+  .featured-badge {
+    position: absolute;
+    top: -1px;
+    right: 20px;
+    background: var(--rojo);
+    color: white;
+    font-family: var(--mono);
+    font-size: 8px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+  }
+
+  /* ── PROCESO STEPS ── */
+  .proceso-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 28px 0;
+  }
+
+  .proceso-step {
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(3,27,62,0.07);
+  }
+
+  .paso-num {
+    font-family: var(--serif);
+    font-size: 48px;
+    font-weight: 700;
+    color: rgba(3,27,62,0.08);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 60px;
+  }
+
+  .paso-content {}
+
+  .paso-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rojo);
+    margin-bottom: 4px;
+  }
+
+  .paso-title {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .paso-desc {
+    font-size: 13px;
+    color: rgba(3,27,62,0.65);
+    line-height: 1.6;
+  }
+
+  /* ── CONTENIDO PILLARS ── */
+  .pillar-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 24px 0;
+  }
+
+  .pillar-card {
+    background: var(--beige2);
+    padding: 20px;
+    border-top: 3px solid var(--azul);
+  }
+
+  .pillar-num {
+    font-family: var(--mono);
+    font-size: 28px;
+    font-weight: 600;
+    color: rgba(3,27,62,0.1);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .pillar-title {
+    font-family: var(--serif);
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .pillar-desc {
+    font-size: 12px;
+    color: rgba(3,27,62,0.6);
+    line-height: 1.6;
+  }
+
+  .pillar-freq {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    color: var(--rojo);
+    margin-top: 8px;
+    text-transform: uppercase;
+  }
+
+  /* ── PAGE NUMBER ── */
+  .page-num {
+    position: absolute;
+    bottom: 36px;
+    right: 64px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: rgba(3,27,62,0.3);
+    z-index: 3;
+  }
+
+  .page-brand {
+    position: absolute;
+    bottom: 36px;
+    left: 96px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: rgba(3,27,62,0.2);
+    z-index: 3;
+  }
+
+  /* ── BLOCKQUOTE ── */
+  .brand-quote {
+    font-family: var(--serif);
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--azul);
+    border-left: 4px solid var(--rojo);
+    padding: 0 0 0 28px;
+    margin: 32px 0;
+    max-width: 500px;
+  }
+
+  /* ── ANTES / DESPUES ── */
+  .ad-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 13px;
+  }
+
+  .ad-table th {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 10px 16px;
+    text-align: left;
+  }
+
+  .ad-table th:first-child {
+    background: var(--beige2);
+    color: rgba(3,27,62,0.5);
+    border-right: 1px solid rgba(3,27,62,0.1);
+  }
+
+  .ad-table th:last-child {
+    background: var(--azul);
+    color: rgba(254,249,240,0.6);
+  }
+
+  .ad-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid rgba(3,27,62,0.06);
+    line-height: 1.5;
+    vertical-align: top;
+  }
+
+  .ad-table td:first-child {
+    background: var(--beige2);
+    color: rgba(3,27,62,0.45);
+    font-style: italic;
+    border-right: 1px solid rgba(3,27,62,0.08);
+    text-decoration: line-through;
+    text-decoration-color: rgba(184,50,50,0.4);
+  }
+
+  .ad-table td:last-child {
+    background: rgba(3,27,62,0.03);
+    color: var(--azul);
+    font-weight: 500;
+  }
+
+  /* ── HOOK STRUCTURE ── */
+  .hook-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .hook-step {
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+    padding: 14px 0;
+    border-bottom: 1px dashed rgba(3,27,62,0.1);
+  }
+
+  .hook-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--rojo);
+    width: 80px;
+    flex-shrink: 0;
+    padding-top: 2px;
+  }
+
+  .hook-content {
+    font-size: 13px;
+    color: rgba(3,27,62,0.7);
+    line-height: 1.6;
+  }
+
+  /* ── PRINT MEDIA ── */
+  @media print {
+    body { background: var(--beige); }
+    .page { box-shadow: none; margin: 0; }
+  }
+
+  @media screen and (max-width: 860px) {
+    .page { width: 100%; margin: 0 0 20px; }
+    .service-cards { grid-template-columns: 1fr; }
+    .grid-2 { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- PÁGINA 1 — COVER -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div class="page cover">
+  <div class="page-lines"></div>
+  <div class="page-margin"></div>
+  <div class="page-content">
+
+    <div class="cover-eyebrow">Documento de identidad de marca · Uso interno · 2025</div>
+
+    <div class="cover-logo-mark">nw_</div>
+    <div class="cover-logo-sub">nadiaweb_</div>
+
+    <div class="cover-rule"></div>
+
+    <div class="cover-title">Identidad de marca,<br>voz y posicionamiento</div>
+
+    <div class="cover-tagline">"tu negocio existe.<br>que online también se entienda."</div>
+
+    <!-- sticky note on cover -->
+    <div class="sticky sticky-yellow" style="position:absolute; right: 80px; top: 220px; width:140px; font-size:11px;">
+      versión final<br>actualizada ✓<br><br>precios en USD<br>→ pesos al día
+    </div>
+
+    <div class="cover-bottom">
+      <div class="cover-bottom-left">
+        Argentina · nadia.web<br>
+        Diseño y desarrollo web<br>
+        Nadia — nadiaweb_
+      </div>
+      <div class="cover-index">
+        01 · La marca<br>
+        02 · Voz<br>
+        03 · Visual<br>
+        04 · Servicios<br>
+        05 · Proceso<br>
+        06 · Contenido
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- PÁGINA 2 — LA MARCA -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-lines"></div>
+  <div class="page-margin"></div>
+  <div class="page-content">
+
+    <div class="section-num">01 — La marca</div>
+    <div class="section-title">qué es y<br>qué hace.</div>
+    <div class="section-subtitle">definición, diferencial, para quién es</div>
+    <div class="section-rule"></div>
+
+    <div class="body-text">
+      Desarrollo páginas web para emprendedores argentinos que ya venden pero no tienen dónde mandar a la gente. Simplifico el proceso, escribo los textos y entrego una web que convierte visitas en clientes.
+    </div>
+
+    <div class="brand-quote">"tu negocio existe.<br>que online también se entienda."</div>
+
+    <div style="margin-bottom: 20px;">
+      <div class="section-num" style="margin-bottom: 12px;">El diferencial real</div>
+      <ul class="diferencial-list">
+        <li><div class="diferencial-dot"></div><div><strong>Código limpio</strong> — programo las webs, sin drag & drop ni constructores que frenen la velocidad.</div></li>
+        <li><div class="diferencial-dot"></div><div><strong>Textos incluidos</strong> — el cliente no escribe nada. Redacto con IA y estrategia.</div></li>
+        <li><div class="diferencial-dot"></div><div><strong>Proceso en 3 pasos</strong> — sin reuniones eternas ni formularios interminables.</div></li>
+        <li><div class="diferencial-dot"></div><div><strong>Entrega en días</strong> — no en semanas. El negocio no puede esperar.</div></li>
+        <li><div class="diferencial-dot"></div><div><strong>Pago en partes</strong> — 50% al inicio, 50% al entregar. Sin sorpresas.</div></li>
+        <li><div class="diferencial-dot"></div><div><strong>Soporte real</strong> — no desaparezco cuando termino.</div></li>
+      </ul>
+    </div>
+
+    <!-- Sticky note -->
+    <div class="sticky sticky-pink" style="position:absolute; right:60px; top:340px;">
+      el cliente no<br>escribe nada.<br><em>ese es el hook.</em>
+    </div>
+
+    <div class="grid-2" style="margin-top: 28px;">
+      <div class="grid-card">
+        <div class="grid-card-label">Para quién es</div>
+        <div style="font-size:13px; line-height:1.8; color:rgba(3,27,62,0.75);">
+          Emprendedores, pymes y profesionales (20–45 años) que:<br><br>
+          <span class="annotation">— "me da vergüenza mandar lo que tengo"</span><br>
+          <span class="annotation">— "pierdo tiempo respondiendo lo mismo"</span><br>
+          <span class="annotation">— "no parezco profesional online"</span>
+        </div>
+      </div>
+      <div class="grid-card" style="background: var(--beige2);">
+        <div class="grid-card-label">Para quién NO es</div>
+        <div style="font-size:13px; line-height:1.8; color:rgba(3,27,62,0.6);">
+          <span class="tachado">Grandes empresas con desarrollos complejos</span><br>
+          <span class="tachado">Personas que buscan cursos</span><br>
+          <span class="tachado">Clientes que quieren algo gratuito</span><br>
+          <span class="tachado">Quienes quieren "bonito" sin objetivo</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="page-brand">nadiaweb_</div>
+  <div class="page-num">01</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- PÁGINA 3 — VOZ DE MARCA -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-lines"></div>
+  <div class="page-margin"></div>
+  <div class="page-content">
+
+    <div class="section-num">02 — Voz de marca</div>
+    <div class="section-title">cómo habla<br>nadiaweb_</div>
+    <div class="section-subtitle">tono, ejemplos, estructura de posts</div>
+    <div class="section-rule"></div>
+
+    <div class="callout">
+      <div class="callout-label">Definición de tono</div>
+      Cercano, directo y honesto. Sin jerga técnica. Sin motivación vacía. Como alguien que sabe lo que hace y te lo explica <span class="underline-editorial">sin vueltas</span>.
+    </div>
+
+    <table class="voz-table">
+      <thead>
+        <tr>
+          <th class="col-si" style="width:50%">Sí usamos</th>
+          <th class="col-no">No usamos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="green-mark">Lenguaje simple y directo</td><td class="red-mark">Tecnicismos (SEO, UX, stack…)</td></tr>
+        <tr><td class="green-mark">Primera persona</td><td class="red-mark">Frases motivacionales vacías</td></tr>
+        <tr><td class="green-mark">Ejemplos concretos</td><td class="red-mark">Promesas exageradas</td></tr>
+        <tr><td class="green-mark">Frases cortas</td><td class="red-mark">Tono de agencia grande</td></tr>
+        <tr><td class="green-mark">Precios visibles</td><td class="red-mark">Emojis de relleno</td></tr>
+        <tr><td class="green-mark">Resultados, no promesas</td><td class="red-mark">Lenguaje técnico sin contexto</td></tr>
+      </tbody>
+    </table>
+
+    <div style="margin: 28px 0 16px;">
+      <div class="section-num" style="margin-bottom: 12px;">Antes / después — ejemplos de lenguaje</div>
+    </div>
+
+    <table class="ad-table">
+      <thead>
+        <tr>
+          <th>Lenguaje de agencia</th>
+          <th>Lenguaje nadiaweb_</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Soluciones web integrales</td><td>Una página que te consiga clientes</td></tr>
+        <tr><td>Diseño UX optimizado</td><td>Que se entienda a la primera</td></tr>
+        <tr><td>Entregables en tiempo y forma</td><td>Lista en pocos días</td></tr>
+        <tr><td>Estrategia de conversión</td><td>Que quien llegue te escriba</td></tr>
+        <tr><td>Propuesta de valor diferencial</td><td>Lo que te hace diferente, bien explicado</td></tr>
+      </tbody>
+    </table>
+
+    <div style="margin: 28px 0 16px;">
+      <div class="section-num" style="margin-bottom: 12px;">Estructura de todo post</div>
+    </div>
+
+    <div class="hook-steps">
+      <div class="hook-step"><div class="hook-label">Hook</div><div class="hook-content">Algo que te reconocés o que te hace pensar. Lo primero que lee el cliente tiene que tocarlo.</div></div>
+      <div class="hook-step"><div class="hook-label">Problema</div><div class="hook-content">Lo que pasa cuando no tenés web. Concreto, sin exagerar.</div></div>
+      <div class="hook-step"><div class="hook-label">Insight</div><div class="hook-content">La razón de fondo que explica el problema. Eso que el cliente no había visto.</div></div>
+      <div class="hook-step"><div class="hook-label">Solución</div><div class="hook-content">Lo que hace nadiaweb_. Sin vueltas.</div></div>
+      <div class="hook-step" style="border:none;"><div class="hook-label">CTA</div><div class="hook-content">Simple, sin presión: <em>escribime.</em></div></div>
+    </div>
+
+    <div class="sticky sticky-blue" style="position:absolute; right:55px; bottom:120px; font-size:11px;">
+      el tono es<br>persona, no<br>marca corporativa
+    </div>
+
+  </div>
+  <div class="page-brand">nadiaweb_</div>
+  <div class="page-num">02</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- PÁGINA 4 — IDENTIDAD VISUAL -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-lines"></div>
+  <div class="page-margin"></div>
+  <div class="page-content">
+
+    <div class="section-num">03 — Identidad visual</div>
+    <div class="section-title">paleta,<br>tipografía.</div>
+    <div class="section-subtitle">sistema visual completo</div>
+    <div class="section-rule"></div>
+
+    <!-- PALETA -->
+    <div class="section-num" style="margin-bottom: 12px;">Paleta de color</div>
+
+    <div class="palette-row">
+      <div class="swatch" style="background:#031b3e; color:#fef9f0; flex:2;">
+        <div class="swatch-name">Azul profundo</div>
+        <div class="swatch-hex">#031b3e</div>
+      </div>
+      <div class="swatch" style="background:#fef9f0; color:#031b3e; border:1px solid rgba(3,27,62,0.1);">
+        <div class="swatch-name">Beige cálido</div>
+        <div class="swatch-hex">#fef9f0</div>
+      </div>
+      <div class="swatch" style="background:#f0e8d8; color:#031b3e;">
+        <div class="swatch-name">Beige oscuro</div>
+        <div class="swatch-hex">#f0e8d8</div>
+      </div>
+      <div class="swatch" style="background:#B83232; color:#fef9f0;">
+        <div class="swatch-name">Rojo tierra</div>
+        <div class="swatch-hex">#B83232</div>
+      </div>
+      <div class="swatch" style="background:#ffffff; color:#031b3e; border:1px solid rgba(3,27,62,0.1);">
+        <div class="swatch-name">Blanco</div>
+        <div class="swatch-hex">#ffffff</div>
+      </div>
+    </div>
+
+    <!-- HOW TO USE -->
+    <div style="display:flex; gap:8px; margin-bottom:32px; flex-wrap:wrap;">
+      <div style="font-size:11px; background:var(--blanco); border:1px solid rgba(3,27,62,0.1); padding:6px 12px; font-family:var(--mono); letter-spacing:0.05em; color:rgba(3,27,62,0.5);">azul = fondos, texto, peso</div>
+      <div style="font-size:11px; background:var(--blanco); border:1px solid rgba(3,27,62,0.1); padding:6px 12px; font-family:var(--mono); letter-spacing:0.05em; color:rgba(3,27,62,0.5);">beige = respiro, fondo base</div>
+      <div style="font-size:11px; background:var(--blanco); border:1px solid rgba(3,27,62,0.1); padding:6px 12px; font-family:var(--mono); letter-spacing:0.05em; color:rgba(3,27,62,0.5);">rojo = acento, énfasis, anotación</div>
+    </div>
+
+    <!-- TIPOGRAFÍA -->
+    <div class="section-num" style="margin-bottom: 16px;">Tipografía</div>
+
+    <div class="type-specimen">
+      <div class="type-role">Titulares y frases de impacto — Lora · Bold / Playfair Display Bold</div>
+      <div style="font-family: var(--serif); font-size: 36px; font-weight: 700; line-height: 1.1; color: var(--azul);">tu negocio online<br><em>tiene que funcionar.</em></div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-role">Cuerpo, captions, textos — Poppins · Regular / Dreaming Outloud Sans Normal</div>
+      <div style="font-family: var(--sans); font-size: 14px; font-weight: 400; line-height: 1.8; color: rgba(3,27,62,0.7); max-width: 500px;">
+        Desarrollo páginas web para emprendedores que ya venden pero no tienen dónde mandar a la gente. El proceso es simple. Los textos los escribo yo. La web la entrego en días.
+      </div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-role">UI, código, detalles — Liberation Mono / JetBrains Mono · Regular</div>
+      <div style="font-family: var(--mono); font-size: 13px; letter-spacing: 0.05em; color: var(--rojo);">USD 220 · landing page · 5 días · 50/50</div>
+    </div>
+
+    <!-- ESTÉTICA -->
+    <div class="section-num" style="margin: 28px 0 16px;">Estética: escritorio digital</div>
+
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <div style="background:var(--azul); color:var(--beige); padding: 8px 14px; font-size:12px; font-family:var(--sans);">líneas de cuaderno</div>
+      <div style="background:var(--beige2); color:var(--azul); padding: 8px 14px; font-size:12px; font-family:var(--sans); border-left:3px solid var(--rojo);">margen rojo</div>
+      <div style="background:var(--blanco); color:rgba(3,27,62,0.4); padding: 8px 14px; font-size:12px; font-family:var(--sans); text-decoration:line-through; text-decoration-color:var(--rojo);">antes / tachado</div>
+      <div style="background:#f9e784; color:#3d2e00; padding: 8px 14px; font-size:12px; font-family:var(--sans); transform:rotate(1.5deg); box-shadow: 1px 2px 6px rgba(0,0,0,0.1);">post-it digital</div>
+      <div style="background:var(--blanco); color:var(--azul); padding: 8px 14px; font-size:12px; font-family:var(--serif); font-style:italic;">anotación al margen</div>
+      <div style="background:var(--blanco); color:var(--azul); padding: 8px 14px; font-size:12px; font-family:var(--sans); text-decoration:underline; text-decoration-color:var(--rojo); text-decoration-thickness:2px; text-underline-offset:3px;">subrayado editorial</div>
+    </div>
+
+    <div class="sticky sticky-green" style="position:absolute; right:55px; top:260px; font-size:11px;">
+      nunca<br>constructores<br>drag & drop
+    </div>
+
+  </div>
+  <div class="page-brand">nadiaweb_</div>
+  <div class="page-num">03</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- PÁGINA 5 — SERVICIOS -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-lines"></div>
+  <div class="page-margin"></div>
+  <div class="page-content">
+
+    <div class="section-num">04 — Servicios</div>
+    <div class="section-title">tres webs.<br>un objetivo.</div>
+    <div class="section-subtitle">precios en USD · se abona en pesos al tipo de cambio del día</div>
+    <div class="section-rule"></div>
+
+    <div class="callout">
+      <div class="callout-label">Importante sobre precios</div>
+      Los precios se expresan en dólares como referencia de valor. El pago se realiza en pesos argentinos al tipo de cambio del día. <strong>50% al inicio · 50% al entregar.</strong> Sin sorpresas.
+    </div>
+
+    <div class="service-cards">
+
+      <div class="service-card">
+        <div class="service-card-tag">Servicio 01</div>
+        <div class="service-card-name">Landing<br>page</div>
+        <div class="service-card-price-usd">USD 220</div>
+        <div class="service-card-price-ars">≈ $270.000 pesos</div>
+        <div class="service-card-divider"></div>
+        <ul class="service-card-items">
+          <li>1 página de conversión</li>
+          <li>Copy incluido</li>
+          <li>Botón WhatsApp directo</li>
+          <li>Mobile + desktop</li>
+          <li>Entrega en 5 días</li>
+        </ul>
+      </div>
+
+      <div class="service-card featured">
+        <div class="featured-badge">más elegido</div>
+        <div class="service-card-tag">Servicio 02</div>
+        <div class="service-card-name">Web<br>institucional</div>
+        <div class="service-card-price-usd">USD 420</div>
+        <div class="service-card-price-ars">≈ $515.000 pesos</div>
+        <div class="service-card-divider"></div>
+        <ul class="service-card-items">
+          <li>Hasta 6 secciones</li>
+          <li>Inicio, servicios, portfolio, contacto</li>
+          <li>Copy incluido</li>
+          <li>Formulario + WhatsApp</li>
+          <li>Mobile + desktop</li>
+          <li>Entrega en 8 días</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card-tag">Servicio 03</div>
+        <div class="service-card-name">Tienda<br>online</div>
+        <div class="service-card-price-usd">USD 680</div>
+        <div class="service-card-price-ars">≈ $835.000 pesos</div>
+        <div class="service-card-divider"></div>
+        <ul class="service-card-items">
+          <li>Catálogo de productos</li>
+          <li>Carrito de compras</li>
+          <li>MercadoPago integrado</li>
+          <li>Copy incluido</li>
+          <li>Mobile + desktop</li>
+          <li>Entrega en 14 días</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Decisor -->
+    <div style="margin-top: 28px;">
+      <div class="section-num" style="margin-bottom: 16px;">¿Cuál necesitás?</div>
+      <table class="voz-table">
+        <thead>
+          <tr>
+            <th class="col-si">Si tu objetivo es…</th>
+            <th class="col-no">Tu web es…</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Que te conozcan y te escriban</td><td><strong>Landing page</strong></td></tr>
+          <tr><td>Mostrar tu empresa, servicios o trayectoria</td><td><strong>Web institucional</strong></td></tr>
+          <tr><td>Vender productos directamente online</td><td><strong>Tienda online</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Incluye en todos -->
+    <div class="callout" style="margin-top: 24px;">
+      <div class="callout-label">Todos los servicios incluyen</div>
+      Textos redactados · Mobile y desktop · 1 ronda de revisiones · Soporte WhatsApp durante el proceso · Entrega con acceso propio · Pago en dos partes
+    </div>
+
+    <div class="sticky sticky-yellow" style="position:absolute; right:55px; top:200px; font-size:11px;">
+      competencia<br>cobra USD 400+<br>por landing
+    </div>
+
+  </div>
+  <div class="page-brand">nadiaweb_</div>
+  <div class="page-num">04</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- PÁGINA 6 — PROCESO + CONTENIDO -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-lines"></div>
+  <div class="page-margin"></div>
+  <div class="page-content">
+
+    <div class="section-num">05 — Proceso</div>
+    <div class="section-title">3 pasos.<br>sin reuniones.</div>
+    <div class="section-subtitle">cómo funciona trabajar con nadiaweb_</div>
+    <div class="section-rule"></div>
+
+    <div class="proceso-steps">
+
+      <div class="proceso-step">
+        <div class="paso-num">01</div>
+        <div class="paso-content">
+          <div class="paso-label">Día 1</div>
+          <div class="paso-title">Me contás de tu negocio</div>
+          <div class="paso-desc">Formulario corto — 10 minutos. Con eso tengo todo lo que necesito para arrancar. Vos no explicás nada más.</div>
+        </div>
+      </div>
+
+      <div class="proceso-step">
+        <div class="paso-num">02</div>
+        <div class="paso-content">
+          <div class="paso-label">Días 2–6</div>
+          <div class="paso-title">Yo armo todo</div>
+          <div class="paso-desc">Escribo los textos, diseño y programo. Vos no hacés nada. Recibís actualizaciones por WhatsApp si hay algo para confirmar.</div>
+        </div>
+      </div>
+
+      <div class="proceso-step" style="border:none;">
+        <div class="paso-num">03</div>
+        <div class="paso-content">
+          <div class="paso-label">Día 7</div>
+          <div class="paso-title">Revisás y lanzamos</div>
+          <div class="paso-desc">Una ronda de ajustes. Publicamos y te entrego acceso propio. La web es tuya.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">Después del lanzamiento</div>
+      7 días de soporte incluido · Mantenimiento mensual opcional (USD 40/mes) · Podés volver cuando quieras crecer.
+    </div>
+
+    <!-- CONTENIDO -->
+    <div style="margin-top: 40px;">
+      <div class="section-num">06 — Contenido</div>
+      <div class="section-title" style="font-size:32px; margin-bottom:6px;">qué publicar.</div>
+      <div class="section-subtitle">4 pilares · calendario semanal</div>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="pillar-grid">
+      <div class="pillar-card">
+        <div class="pillar-num">01</div>
+        <div class="pillar-title">Problema real</div>
+        <div class="pillar-desc">Mostrás un dolor concreto sin solución. Que el cliente piense "esto me pasa a mí".</div>
+        <div class="pillar-freq">2× / semana</div>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-num">02</div>
+        <div class="pillar-title">Educación simple</div>
+        <div class="pillar-desc">Explicás algo técnico en lenguaje humano. Sin ser guru ni aburrir.</div>
+        <div class="pillar-freq">1× / semana</div>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-num">03</div>
+        <div class="pillar-title">Prueba social</div>
+        <div class="pillar-desc">Trabajos, resultados o testimonios. Sin exagerar. Con datos reales.</div>
+        <div class="pillar-freq">1× / semana</div>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-num">04</div>
+        <div class="pillar-title">Venta directa</div>
+        <div class="pillar-desc">Tu servicio sin disculpas. Con precio, proceso y CTA claro.</div>
+        <div class="pillar-freq">1× / semana</div>
+      </div>
+    </div>
+
+    <div style="margin-top:20px; background:var(--azul); color:var(--beige); padding:24px 28px;">
+      <div style="font-family:var(--mono); font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:rgba(254,249,240,0.4); margin-bottom:12px;">Calendario semanal</div>
+      <div style="display:flex; gap:0; font-size:12px;">
+        <div style="flex:1; padding:12px 14px; border-right:1px solid rgba(254,249,240,0.1);"><div style="font-family:var(--mono); font-size:9px; letter-spacing:0.12em; color:rgba(254,249,240,0.4); margin-bottom:4px; text-transform:uppercase;">Lunes</div>Problema real o reflexión</div>
+        <div style="flex:1; padding:12px 14px; border-right:1px solid rgba(254,249,240,0.1);"><div style="font-family:var(--mono); font-size:9px; letter-spacing:0.12em; color:rgba(254,249,240,0.4); margin-bottom:4px; text-transform:uppercase;">Miércoles</div>Educación o antes/después</div>
+        <div style="flex:1; padding:12px 14px;"><div style="font-family:var(--mono); font-size:9px; letter-spacing:0.12em; color:rgba(254,249,240,0.4); margin-bottom:4px; text-transform:uppercase;">Viernes</div>Venta, prueba social o CTA</div>
+      </div>
+    </div>
+
+    <div class="sticky sticky-pink" style="position:absolute; right:55px; top:200px; font-size:11px;">
+      vos no<br>escribís nada.<br>ese es el punto.
+    </div>
+
+  </div>
+  <div class="page-brand">nadiaweb_</div>
+  <div class="page-num">05 · 06</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- PÁGINA 7 — CIERRE -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div class="page" style="background: var(--azul);">
+  <div class="page-lines"></div>
+  <div class="page-margin" style="background: rgba(184,50,50,0.35);"></div>
+  <div class="page-content" style="display:flex; flex-direction:column; min-height:1123px; color:var(--beige);">
+
+    <div style="font-family:var(--mono); font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:rgba(254,249,240,0.3); margin-bottom:auto;">Documento de identidad de marca</div>
+
+    <div>
+      <div style="font-family:var(--serif); font-size:18px; font-style:italic; color:rgba(254,249,240,0.4); margin-bottom:20px;">Una marca no se construye de golpe.</div>
+
+      <div style="font-family:var(--serif); font-size:52px; font-weight:700; line-height:1.05; letter-spacing:-2px; margin-bottom:8px;">Se construye<br>siendo<br><em>consistente.</em></div>
+
+      <div style="width:48px; height:2px; background:var(--rojo); margin: 28px 0;"></div>
+
+      <div style="font-family:var(--sans); font-size:14px; color:rgba(254,249,240,0.55); line-height:1.8; max-width:400px;">
+        Publicando. Vendiendo. Mostrando el trabajo.<br>
+        Sin pretender ser una agencia.<br>
+        Sin esconder los precios.<br>
+        Sin desaparecer cuando termina el proyecto.
+      </div>
+    </div>
+
+    <div style="margin-top:auto; display:flex; justify-content:space-between; align-items:flex-end; padding-top:48px;">
+      <div>
+        <div style="font-family:var(--serif); font-size:48px; font-weight:700; letter-spacing:-2px; color:var(--beige); line-height:1;">nw_</div>
+        <div style="font-family:var(--mono); font-size:11px; letter-spacing:0.15em; color:rgba(254,249,240,0.35); margin-top:4px;">nadiaweb_ · Argentina · 2025</div>
+      </div>
+      <div style="font-family:var(--serif); font-style:italic; font-size:13px; color:rgba(254,249,240,0.3); text-align:right; line-height:1.8;">
+        tu negocio existe.<br>que online también<br>se entienda.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

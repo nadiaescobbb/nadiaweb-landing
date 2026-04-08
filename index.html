@@ -450,6 +450,68 @@ nav.scrolled {
 }
 .pricing-note strong { color: var(--azul); font-weight: 500; }
 
+/* ── PORTFOLIO ── */
+#work { background: var(--gray-50); }
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.work-card {
+  background: var(--white);
+  border: 1px solid rgba(3,27,62,0.08);
+  padding: 12px;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.work-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(3,27,62,0.06);
+}
+.wc-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: #E8EBF0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  position: relative;
+}
+.wc-img::after {
+  content: "Imagen del Proyecto";
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: rgba(3,27,62,0.25);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.wc-tag {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--rojo);
+  margin-bottom: 8px;
+  display: block;
+  padding: 0 8px;
+}
+.wc-title {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--azul);
+  margin-bottom: 6px;
+  padding: 0 8px;
+}
+.wc-desc {
+  font-size: 0.8rem;
+  color: var(--azul-60);
+  line-height: 1.6;
+  padding: 0 8px 12px;
+}
+
 /* ── PROCESS ── */
 #process { background: var(--white); }
 .process-grid {
@@ -739,8 +801,8 @@ footer {
 /* ── RESPONSIVE ── */
 @media (max-width: 1000px) {
   .hero-wrap { grid-template-columns: 1fr; gap: 48px; }
-  .problem-grid, .services-grid, .process-grid { grid-template-columns: 1fr; gap: 2px; }
-  .problem-grid, .process-grid { background: transparent; gap: 16px; }
+  .problem-grid, .services-grid, .process-grid, .work-grid { grid-template-columns: 1fr; gap: 2px; }
+  .problem-grid, .process-grid, .work-grid { background: transparent; gap: 16px; }
   .problem-card, .process-card { border: 1px solid rgba(3,27,62,0.08); }
   .services-grid { gap: 16px; }
 }
@@ -761,6 +823,7 @@ footer {
   <a class="nav-logo" href="#">nadiaweb_</a>
   <ul class="nav-links">
     <li><a href="#services">Servicios</a></li>
+    <li><a href="#work">Proyectos</a></li>
     <li><a href="#process">Proceso</a></li>
     <li><a href="#about">Sobre mí</a></li>
     <li><a href="#faq">FAQ</a></li>
@@ -866,15 +929,15 @@ footer {
       <div class="svc-card reveal d3">
         <span class="svc-num">03</span>
         <div class="svc-name">Tienda<br>online</div>
-        <p style="font-size:0.75rem; color:var(--azul-60); line-height:1.4; margin-bottom:16px;">Para vender productos físicos o digitales 24/7 en piloto automático.</p>
+        <p style="font-size:0.75rem; color:var(--azul-60); line-height:1.4; margin-bottom:16px;">Hecha para que agregues o cambies productos sin saber programar. Te explico cómo hacerlo paso a paso.<br><br>Y si preferís no hacerlo, también puedo encargarme del mantenimiento.</p>
         <div class="svc-price-usd">USD 680</div>
         <div class="svc-price-ars">≈ $835.000 · pesos al cambio</div>
         <div class="svc-line"></div>
         <ul class="svc-list">
-          <li><strong>Catálogo</strong> de productos</li>
+          <li><strong>Catálogo</strong> autogestionable</li>
           <li><strong>Carrito</strong> de compras</li>
           <li><strong>MercadoPago</strong> integrado</li>
-          <li><strong>Copy</strong> incluido</li>
+          <li><strong>Copy</strong> (textos) incluido</li>
           <li><strong>Mobile</strong> + desktop</li>
         </ul>
         <div class="svc-delivery">Entrega en 14 días hábiles</div>
@@ -883,6 +946,39 @@ footer {
     </div>
     <div class="pricing-note reveal">
       <strong>Sobre los precios:</strong> Se expresan en dólares para que no pierdan vigencia con la inflación. El pago se hace en pesos argentinos al tipo de cambio del día que acordamos. 50% al arrancar, 50% al entregar.
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="work" class="section">
+  <div class="section-inner">
+    <span class="label reveal">Mis proyectos</span>
+    <h2 class="h2 reveal d1">Diseños que<br><em>generan ventas.</em></h2>
+    <p class="lead reveal d2">Ejemplos de cómo se ve una web a medida: clara, veloz y enfocada al 100% en conseguirte clientes.</p>
+    
+    <div class="work-grid reveal d3">
+      <!-- Proyecto 1 -->
+      <div class="work-card">
+        <div class="wc-img"></div>
+        <span class="wc-tag">Landing Page</span>
+        <div class="wc-title">Estudio Jurídico R&M</div>
+        <p class="wc-desc">Diseño minimalista enfocado en capturas de clientes buscando representación urgente, transmitiendo autoridad y experiencia en segundos.</p>
+      </div>
+      <!-- Proyecto 2 -->
+      <div class="work-card">
+        <div class="wc-img"></div>
+        <span class="wc-tag">Tienda Online</span>
+        <div class="wc-title">Cerámica Deco Home</div>
+        <p class="wc-desc">Catálogo ágil y visual optimizado para dispositivos móviles, con pagos automatizados que permite vender decoración por todo el país.</p>
+      </div>
+      <!-- Proyecto 3 -->
+      <div class="work-card">
+        <div class="wc-img"></div>
+        <span class="wc-tag">Web Institucional</span>
+        <div class="wc-title">Consultora GlobalHub</div>
+        <p class="wc-desc">Sitio B2B de 6 secciones diseñado para deslumbrar a proveedores extranjeros, validando servicios consultivos de alto valor.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -938,10 +1034,13 @@ footer {
         <span class="about-eyebrow reveal">Sobre mí</span>
         <h2 class="about-h2 reveal d1">Hola, soy Nadia.</h2>
         <p class="about-p reveal d2">
-          Soy diseñadora y desarrolladora web freelance basada en Chaco. Trabajo exclusivamente con emprendedores y PyMEs argentinas que necesitan una web que <strong>funcione de verdad y no sea solo un adorno.</strong>
+          Soy diseñadora y web developer freelance. Trabajo exclusivamente con emprendedores y PyMEs argentinas que necesitan una web que <strong>funcione de verdad</strong>.
         </p>
         <p class="about-p reveal d3">
-          <em>Programo el código yo misma, sin constructores drag & drop que alentan tu página.</em> Además, yo escribo los textos orientados a conversión. El cliente llega, completa un formulario y en una semana tiene su negocio luciendo impecable en internet. Si tu meta es dejar de perder ventas por una mala primera impresión, trabajemos juntos.
+          No uso plantillas ni sistemas pesados. Programo tu página desde cero para que sea extremadamente rápida y clara. Y lo más importante: <strong>podés usarla sin depender de mí.</strong>
+        </p>
+        <p class="about-p reveal d4">
+          Yo escribo los textos, diseño y programo todo para que en una semana quede impecable. Te explico todo lo básico para que seas el dueño absoluto de tu web. Y si querés que siga ayudándote, siempre estoy disponible.
         </p>
         <div class="about-rule reveal d4"></div>
         <div class="about-details reveal d4">
@@ -993,8 +1092,8 @@ footer {
 
       <div class="faq-item reveal d2">
         <details>
-          <summary>¿Puedo modificar la web después? <span class="faq-arrow" aria-hidden="true"></span></summary>
-          <p class="faq-answer">Sí. Te entrego acceso completo y te explico cómo manejarte con los cambios básicos. Si preferís que me encargue yo del mantenimiento, hay una opción mensual de USD 40.</p>
+          <summary>Si hacés la web desde cero, ¿quedo atado a vos para siempre? <span class="faq-arrow" aria-hidden="true"></span></summary>
+          <p class="faq-answer">Para nada. Desarrollo tu web a medida sin constructores lentos para que cargue súper rápido, pero <strong>no quedás dependiendo de mí</strong>. Te entrego acceso completo y te explico exactamente cómo hacer modificaciones básicas. Y si preferís no tocar nada, recién ahí elijo ofrecerte una opción mensual de mantenimiento.</p>
         </details>
       </div>
 
