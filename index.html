@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
 <meta charset="UTF-8"/>
@@ -470,22 +470,22 @@ nav.scrolled {
 .wc-img {
   width: 100%;
   aspect-ratio: 4/3;
-  background: #E8EBF0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
   border-radius: 4px;
   margin-bottom: 20px;
   overflow: hidden;
   position: relative;
+  background: #E8EBF0;
 }
-.wc-img::after {
-  content: "Imagen del Proyecto";
-  font-family: var(--mono);
-  font-size: 0.65rem;
-  color: rgba(3,27,62,0.25);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+.wc-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.work-card:hover .wc-img img {
+  transform: scale(1.03);
 }
 .wc-tag {
   font-family: var(--mono);
@@ -960,24 +960,24 @@ footer {
     <div class="work-grid reveal d3">
       <!-- Proyecto 1 -->
       <div class="work-card">
-        <div class="wc-img"></div>
+        <div class="wc-img"><img src="img/project_law_firm.png" alt="Estudio Jurídico R&M - Landing Page diseñada por nadiaweb_" loading="lazy"></div>
         <span class="wc-tag">Landing Page</span>
         <div class="wc-title">Estudio Jurídico R&M</div>
-        <p class="wc-desc">Diseño minimalista enfocado en capturas de clientes buscando representación urgente, transmitiendo autoridad y experiencia en segundos.</p>
+        <p class="wc-desc">Diseño minimalista enfocado en capturar clientes que buscan representación urgente, transmitiendo autoridad y experiencia en segundos.</p>
       </div>
       <!-- Proyecto 2 -->
       <div class="work-card">
-        <div class="wc-img"></div>
+        <div class="wc-img"><img src="img/project_deco_store.png" alt="Cerámica Deco Home - Tienda Online diseñada por nadiaweb_" loading="lazy"></div>
         <span class="wc-tag">Tienda Online</span>
         <div class="wc-title">Cerámica Deco Home</div>
-        <p class="wc-desc">Catálogo ágil y visual optimizado para dispositivos móviles, con pagos automatizados que permite vender decoración por todo el país.</p>
+        <p class="wc-desc">Catálogo ágil y visual optimizado para móviles, con pagos automatizados que permite vender decoración por todo el país.</p>
       </div>
       <!-- Proyecto 3 -->
       <div class="work-card">
-        <div class="wc-img"></div>
+        <div class="wc-img"><img src="img/project_consulting.png" alt="Consultora GlobalHub - Web institucional diseñada por nadiaweb_" loading="lazy"></div>
         <span class="wc-tag">Web Institucional</span>
         <div class="wc-title">Consultora GlobalHub</div>
-        <p class="wc-desc">Sitio B2B de 6 secciones diseñado para deslumbrar a proveedores extranjeros, validando servicios consultivos de alto valor.</p>
+        <p class="wc-desc">Sitio B2B de 6 secciones diseñado para deslumbrar a proveedores, validando servicios de alto valor ante grandes empresas.</p>
       </div>
     </div>
   </div>
