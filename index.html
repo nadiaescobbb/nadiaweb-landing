@@ -197,7 +197,7 @@ nav.scrolled .nav-cta { opacity: 1; pointer-events: auto; transform: translateY(
   color: rgba(254,249,240,0.35);
   text-decoration: none;
   border-bottom: 1px solid rgba(254,249,240,0.15);
-  padding-bottom: 2px;
+  padding: 12px 0 2px 0;
   transition: color 0.2s, border-color 0.2s;
 }
 .btn-ghost:hover { color: rgba(254,249,240,0.7); border-color: rgba(254,249,240,0.4); }
@@ -819,8 +819,10 @@ footer {
   .problem-grid, .process-grid, .work-grid { background: transparent; gap: 16px; }
   .problem-card, .process-card { border: 1px solid rgba(3,27,62,0.08); }
   .services-grid { gap: 16px; }
+  .svc-card { padding: 32px 24px; }
 }
 @media (max-width: 640px) {
+  .section { padding: 64px var(--page-x); }
   .about-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
   .fab-wa { bottom: 20px; right: 20px; width: 54px; height: 54px; }
   .fab-wa svg { width: 28px; height: 28px; }
@@ -834,7 +836,8 @@ footer {
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
-  padding: 4px;
+  padding: 12px;
+  margin: -8px;
   background: none;
   border: none;
 }
@@ -968,7 +971,7 @@ nav.scrolled .nav-burger span { background: var(--azul); }
         <div class="svc-tag">Más elegido</div>
         <span class="svc-num">02</span>
         <div class="svc-name">Web<br>institucional</div>
-        <p style="font-size:0.75rem; color:rgba(254,249,240,0.7); line-height:1.4; margin-bottom:16px;">Ideal para validar tu marca frente a empresas proveedoras y B2B.</p>
+        <p style="font-size:0.85rem; color:rgba(254,249,240,0.9); line-height:1.5; margin-bottom:16px;">Ideal para validar tu marca frente a empresas proveedoras y B2B.</p>
         <div class="svc-price-usd">USD 420</div>
         <div class="svc-price-ars">≈ $515.000 · pesos al cambio</div>
         <div class="svc-line"></div>
@@ -985,7 +988,7 @@ nav.scrolled .nav-burger span { background: var(--azul); }
       <div class="svc-card reveal d3">
         <span class="svc-num">03</span>
         <div class="svc-name">Tienda<br>online</div>
-        <p style="font-size:0.75rem; color:var(--azul-60); line-height:1.4; margin-bottom:16px;">Hecha para que agregues o cambies productos sin saber programar. Te explico cómo hacerlo paso a paso.<br><br>Y si preferís no hacerlo, también puedo encargarme del mantenimiento.</p>
+        <p style="font-size:0.85rem; color:var(--azul-90); line-height:1.5; margin-bottom:16px;">Hecha para que agregues o cambies productos sin saber programar. Te explico cómo hacerlo paso a paso.<br><br>Y si preferís no hacerlo, también puedo encargarme del mantenimiento.</p>
         <div class="svc-price-usd">USD 680</div>
         <div class="svc-price-ars">≈ $835.000 · pesos al cambio</div>
         <div class="svc-line"></div>
